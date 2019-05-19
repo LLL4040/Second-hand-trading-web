@@ -26,10 +26,11 @@
 
 * 配置Git hook使得在每一次Git push的时候构建触发器
 ![job3](https://img-blog.csdnimg.cn/20190519210953957.png)
-同时在github 对应的repo中设置钩子：
+  * 同时在github 对应的repo中设置钩子：
 ![github](https://img-blog.csdnimg.cn/20190519211635417.png)
 
 * 配置构建操作
+  * 需要对每一个服务都调用一次maven并在高级->POM中设置对应pom.xml的路径
 ![job4](https://img-blog.csdnimg.cn/20190519232229395.png)
 
 * 如果构建失败向指定目标发送邮件

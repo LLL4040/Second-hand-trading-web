@@ -30,8 +30,9 @@
 ![github](https://img-blog.csdnimg.cn/20190519211635417.png)
 
 * 配置构建操作
-  * 需要对每一个服务都调用一次maven并在高级->POM中设置对应pom.xml的路径
-![job4](https://img-blog.csdnimg.cn/20190519232229395.png)
+  * 由于在pom.xml中配备了相关的插件，直接运行命令mvn docker:build即可构建image，所以采取了cd进入相关目录，之后运行mvn命令的操作方法。
+![job4](https://img-blog.csdnimg.cn/20190520111750937.png)
+![job4](https://img-blog.csdnimg.cn/20190520111829599.png)
 
 * 如果构建失败向指定目标发送邮件
 ![job5](https://img-blog.csdnimg.cn/20190519211502356.png)
@@ -44,7 +45,7 @@
 ![user1](https://img-blog.csdnimg.cn/20190519212217185.png)
 
 * 输入用户名和密码后进入以下界面：右侧即为job列表(其中：spring 为测试SE100/homework3/wordladder_function的job、spring-cloud1为测试second-hand-trading-web（即多人合作项目）的job）
-![user2](https://img-blog.csdnimg.cn/2019051921514928.png)
+![user2](https://img-blog.csdnimg.cn/20190520112556403.png)
 
 * 点击对应的job可以进行对应的操作，可以修改配置，查看构建历史以及进行构建操作
 ![user3](https://img-blog.csdnimg.cn/20190519220429143.png)

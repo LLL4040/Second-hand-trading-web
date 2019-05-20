@@ -15,6 +15,8 @@
                 <li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
               </ul>
             </li>
+            <li><a  ><i><router-link :to="{name: 'login'}" class="icon-login">{{message}}</router-link></i></a></li>
+
           </ul>
         </div>
         <div class="h_search">
@@ -345,7 +347,12 @@
 
 export default {
   name: 'index',
+    data () {
+        return {
+            message: localStorage.getItem('username'),
 
+        }
+    }
 }
 </script>
 

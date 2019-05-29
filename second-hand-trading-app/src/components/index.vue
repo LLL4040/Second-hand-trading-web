@@ -1,6 +1,7 @@
 <template>
   <body>
   <!-- start header -->
+  <el-button type="primary" class="button2"  @click="login">登录</el-button>
   <div class="header_bg">
     <div class="wrap">
       <div class="header">
@@ -188,14 +189,15 @@
         <!-- start grids_of_3 -->
         <div class="grids_of_3">
           <div class="grid1_of_3">
-            <a href="details.html">
+            <div>
               <img src="../assets/pic1.jpg" alt=""/>
               <h3>branded shoes</h3>
               <div class="price">
                 <h4>$300<span>indulge</span></h4>
+                <el-button type="primary" class="button2"  @click="login">登录</el-button>
               </div>
               <span class="b_btm"></span>
-            </a>
+            </div>
           </div>
           <div class="grid1_of_3">
             <a href="details.html">
@@ -345,6 +347,18 @@
 
 export default {
   name: 'index',
+  method: {
+    toDetail(){
+      this.$router.push({ path: `/detail` });
+
+
+    },
+    login(){
+      this.$router.push({ path: `/login` });
+
+
+    },
+  }
 
 }
 </script>

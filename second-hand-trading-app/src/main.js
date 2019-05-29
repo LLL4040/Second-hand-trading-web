@@ -3,12 +3,12 @@ import App from './App.vue'
 import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import './registerServiceWorker'
+// import './registerServiceWorker'
 import './mycss/owl.carousel.css';
 import './mycss/productviewgallery.css';
 import './mycss/slider.css';
 import './mycss/style.css';
-import $ from 'jquery';
+
 
 
 Vue.use(ElementUI);

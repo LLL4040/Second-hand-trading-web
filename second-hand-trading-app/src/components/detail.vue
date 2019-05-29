@@ -27,49 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="header_btm">
-        <div class="wrap">
-            <div class="header_sub">
-                <div class="h_menu">
-                    <ul>
-                        <li class="active"><a href="index.html">Home</a></li> |
-                        <li><a href="sale.html">sale</a></li> |
-                        <li><a href="handbags.html">handbags</a></li> |
-                        <li><a href="accessories.html">accessories</a></li> |
-                        <li><a href="wallets.html">wallets</a></li> |
-                        <li><a href="sale.html">sale</a></li> |
-                        <li><a href="index.html">mens store</a></li> |
-                        <li><a href="shoes.html">shoes</a></li> |
-                        <li><a href="sale.html">vintage</a></li> |
-                        <li><a href="service.html">services</a></li> |
-                        <li><a href="contact.html">Contact us</a></li>
-                    </ul>
-                </div>
-                <div class="top-nav">
-                    <nav class="nav">
-                        <a href="#" id="w3-menu-trigger"> </a>
-                        <ul class="nav-list" style="">
-                            <li class="nav-item"><a class="active" href="index.html">Home</a></li>
-                            <li class="nav-item"><a href="sale.html">Sale</a></li>
-                            <li class="nav-item"><a href="handbags.html">Handbags</a></li>
-                            <li class="nav-item"><a href="accessories.html">Accessories</a></li>
-                            <li class="nav-item"><a href="shoes.html">Shoes</a></li>
-                            <li class="nav-item"><a href="service.html">Services</a></li>
-                            <li class="nav-item"><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                    <div class="search_box">
-                        <form>
-                            <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-                        </form>
-                    </div>
-                    <div class="clear"> </div>
-<!--                    <script src="../js/responsive.menu.js"></script>-->
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
+
     <!-- start main -->
     <div class="main_bg">
         <div class="wrap">
@@ -114,38 +72,7 @@
                                                 <img src="images/0001-2.jpg" alt="Women Shorts" title="Women Shorts" />
                                             </a>
                                         </div>
-<!--                                        <script type="text/javascript">-->
-<!--                                            var prodGallery = jQblvg.parseJSON('{"prod_1":{"main":{"orig":"images/0001-2.jpg","main":"images/large/0001-2.jpg","thumb":"images/small/0001-2.jpg","label":""},"gallery":{"item_0":{"orig":"images/0001-2.jpg","main":"images/large/0001-2.jpg","thumb":"images/small/0001-2.jpg","label":""},"item_1":{"orig":"images/0001-1.jpg","main":"images/large/0001-1.jpg","thumb":"images/small/0001-1.jpg","label":""},"item_2":{"orig":"images/0001-5.jpg","main":"images/large/0001-5.jpg","thumb":"images/small/0001-5.jpg","label":""},"item_3":{"orig":"images/0001-3.jpg","main":"images/large/0001-3.jpg","thumb":"images/small/0001-3.jpg","label":""},"item_4":{"orig":"images/0001-4.jpg","main":"images/large/0001-4.jpg","thumb":"images/small/0001-4.jpg","label":""}},"type":"simple","video":false}}'),-->
-<!--                                                gallery_elmnt = jQblvg('.product-img-box'),-->
-<!--                                                galleryObj = new Object(),-->
-<!--                                                gallery_conf = new Object();-->
-<!--                                            gallery_conf.moreviewitem = '<a class="cs-fancybox-thumbs" data-fancybox-group="thumb" style="width:64px;height:85px;" href=""  title="" alt=""><img src="" src_main="" width="64" height="85" title="" alt="" /></a>';-->
-<!--                                            gallery_conf.animspeed = 200;-->
-<!--                                            jQblvg(document).ready(function() {-->
-<!--                                                galleryObj[1] = new prodViewGalleryForm(prodGallery, 'prod_1', gallery_elmnt, gallery_conf, '.product-image', '.more-views', 'http:');-->
-<!--                                                jQblvg('.product-image .cs-fancybox-thumbs').absoluteClick();-->
-<!--                                                jQblvg('.cs-fancybox-thumbs').fancybox({ prevEffect : 'none',-->
-<!--                                                    nextEffect : 'none',-->
-<!--                                                    closeBtn : true,-->
-<!--                                                    arrows : true,-->
-<!--                                                    nextClick : true,-->
-<!--                                                    helpers: {-->
-<!--                                                        thumbs : {-->
-<!--                                                            width: 64,-->
-<!--                                                            height: 85,-->
-<!--                                                            position: 'bottom'-->
-<!--                                                        }-->
-<!--                                                    }-->
-<!--                                                });-->
-<!--                                                jQblvg('#wrap').css('z-index', '100');-->
-<!--                                                jQblvg('.more-views-container').elScroll({type: 'vertical', elqty: 4, btn_pos: 'border', scroll_speed: 400 });-->
 
-<!--                                            });-->
-
-<!--                                            function initGallery(a,b,element) {-->
-<!--                                                galleryObj[a] = new prodViewGalleryForm(prods, b, gallery_elmnt, gallery_conf, '.product-image', '.more-views', '');-->
-<!--                                            };-->
-<!--                                        </script>-->
                                     </div>
                                 </div>
                             </div>

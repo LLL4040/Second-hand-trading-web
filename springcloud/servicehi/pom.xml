@@ -6,11 +6,10 @@
         <groupId>org.springcloudwork</groupId>
         <artifactId>springcloud</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>com.example</groupId>
     <artifactId>servicehi</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>servicehi</name>
     <description>Demo project for Spring Boot</description>
 

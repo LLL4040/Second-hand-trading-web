@@ -1,85 +1,60 @@
+
 <template>
-    <div class="login">
-        <el-container>
-            <el-header>
-                <el-row>
-                    <el-button type="danger" width="30%"
-                               position="relative"
-                               @click="toMain">全部商品分类</el-button>
-                </el-row>
-            </el-header>
-            <el-main>
-                <el-row id="top">
 
-                </el-row>
-                <el-row id="login">
+<div>
 
-                    <el-col :span="10" :offset="2">
-                        <a><img src="../assets/art.png" class="img-thumbnail " style="border-radius: 10%;" id="img"/> </a>
-                    </el-col>
+<div class="login">
+    <div class="message">二手平台-登陆注册</div>
+    <div id="darkbannerwrap"></div>
 
-                    <el-col :span="10">
-                        <el-form>
-                            <el-row>
-                                <h2>e-book登录</h2>
-                            </el-row>
-                            <el-row><hr/></el-row>
+    <form>
+        <input name="username" placeholder="用户名"  type="text" v-model="form.id">
+        <hr class="hr15">
+        <input name="password" placeholder="密码"  type="password" v-model="form.password">
+        <hr class="hr15">
+        <input value="登录" style="width:40%;" type="submit" @click="submit">
+        <router-link :to="{name:'register'}"><input value="注册"  type="button" style="width:40%;"></router-link>
+        <hr class="hr20">
+        <!-- 帮助 <a onClick="alert('请联系管理员')">忘记密码</a> -->
+    </form>
 
-                            <el-form-item>
-                                <el-row>
-                                    <el-input placeholder="账号" v-model="id" class="input"></el-input>
-                                </el-row>
-                            </el-form-item>
-                            <el-form-item>
-                                <el-row>
-                                    <el-input placeholder="密码" v-model="password" show-password class="input"></el-input>
-                                </el-row>
-                            </el-form-item>
-                            <el-form-item>
-                                <el-row>
-                                    <el-select placeholder="身份" v-model="status" class="input">
-                                        <el-option value="user" label="用户"></el-option>
-                                        <el-option value="manager" label="管理员"></el-option>
-                                    </el-select>
 
-                                </el-row>
-                            </el-form-item>
-                            <el-row >
-                                <el-col>
-                                    <el-button type="primary" class="button" @click="toRegister" round>登录</el-button>
-                                </el-col>
-                                <el-col>
-                                    <el-button type="success" class="button" @click="toRegister" round>注册</el-button>
-                                </el-col>
-                            </el-row>
+</div>
 
-                            <br/>
+<div class="copyright">© 2016品牌名称 by <a href="http://www.mycodes.net/" target="_blank">源码之家</a></div>
 
-                        </el-form>
-                    </el-col>
-                </el-row>
-            </el-main>
-            <el-footer><p>购物指南</p></el-footer>
-        </el-container>
-    </div>
+</div>
 </template>
-
-<script>
-
-    export default {
-        name: "login",
-        data(){
-            return{
-                id:"",
-                password:"",
-                status:"",
-                name:""
-            }
-
-        },
-    }
-</script>
-
-<style scoped>
+<style src="../mycss/login.css">
 
 </style>
+<script>
+    export default {
+        name: 'register',
+        props: ['message'],
+        data () {
+            return {
+                form: {
+                    id: '',
+                    password: ''
+                }
+            }
+        },
+        mounted () {
+            localStorage.clear()
+            localStorage.setItem('username', '登陆')
+        },
+        methods: {
+            /* 提交进行判断的函数 */
+            submit: function () {
+
+                            alert('登陆成功')
+                            localStorage.setItem('username', this.form.id)
+                            localStorage.setItem('password', this.form.password)
+
+                            this.$router.push({name: 'home'})
+
+            },
+        }
+    }
+</script>

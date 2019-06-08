@@ -9,13 +9,14 @@
           <a href="index.html"><img src="../assets/logo.png" alt=""/> </a>
         </div>
         <div class="h_icon">
-          <ul class="icon1 sub-icon1">
+         <ul class="icon1 sub-icon1">
             <li><a class="active-icon c1" href="#"><i>$300</i></a>
               <ul class="sub-icon1 list">
                 <li><h3>shopping cart empty</h3><a href=""></a></li>
                 <li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
               </ul>
             </li>
+            <li><a  ><i><router-link :to="{name: 'login'}" class="icon-login">{{message}}</router-link></i></a></li>
           </ul>
         </div>
         <div class="h_search">
@@ -273,6 +274,12 @@
 
 export default {
   name: 'index',
+   data () {
+        return {
+            message: localStorage.getItem('username'),
+
+        }
+    },
   methods:{
     toDetail(){
       this.$router.push({ path: `/detail` });

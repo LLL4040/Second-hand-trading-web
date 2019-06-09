@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  * Created by chenhaopeng on 2019/5/2.
  */
 @Service
-public class FollowServiceimpl implements FollowService {
+public class CollectServiceimpl implements CollectService {
 
     @Autowired
     private CollectDao collectDao;

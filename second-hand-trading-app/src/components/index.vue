@@ -16,8 +16,13 @@
                 <li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
               </ul>
             </li>
-            <li><a  ><i><router-link :to="{name: 'login'}" class="icon-login">{{message}}</router-link></i></a></li>
+            <li><a><i><router-link :to="{name: 'login'}" class="icon-login">登录</router-link></i></a>
+            </li>
+
           </ul>
+
+
+
         </div>
         <div class="h_search">
           <form>
@@ -31,85 +36,15 @@
   </div>
 
 
-  <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
-  <!----start-cursual---->
-  <div class="wrap">
-    <!----start-img-cursual---->
-    <div id="owl-demo" class="owl-carousel">
-      <div class="item" onClick="location.href='details.html';">
-        <div class="cau_left">
-          <img class="lazyOwl" data-src="images/c1.jpg" alt="Lazy Owl Image">
-        </div>
-        <div class="cau_left">
-          <h4><a href="details.html">branded shoes</a></h4>
-          <a href="details.html" class="btn">shop</a>
-        </div>
-      </div>
-      <div class="item" onClick="location.href='details.html';">
-        <div class="cau_left">
-          <img class="lazyOwl" data-src="images/c2.jpg" alt="Lazy Owl Image">
-        </div>
-        <div class="cau_left">
-          <h4><a href="details.html">branded tees</a></h4>
-          <a href="details.html" class="btn">shop</a>
-        </div>
-      </div>
-      <div class="item" onClick="location.href='details.html';">
-        <div class="cau_left">
-          <img class="lazyOwl" data-src="images/c3.jpg" alt="Lazy Owl Image">
-        </div>
-        <div class="cau_left">
-          <h4><a href="details.html">branded jeens</a></h4>
-          <a href="details.html" class="btn">shop</a>
-        </div>
-      </div>
-      <div class="item" onClick="location.href='details.html';">
-        <div class="cau_left">
-          <img class="lazyOwl" data-src="images/c2.jpg" alt="Lazy Owl Image">
-        </div>
-        <div class="cau_left">
-          <h4><a href="details.html">branded tees</a></h4>
-          <a href="details.html" class="btn">shop</a>
-        </div>
-      </div>
-      <div class="item" onClick="location.href='details.html';">
-        <div class="cau_left">
-          <img class="lazyOwl" data-src="images/c1.jpg" alt="Lazy Owl Image">
-        </div>
-        <div class="cau_left">
-          <h4><a href="details.html">branded shoes</a></h4>
-          <a href="details.html" class="btn">shop</a>
-        </div>
-      </div>
-      <div class="item" onClick="location.href='details.html';">
-        <div class="cau_left">
-          <img class="lazyOwl" data-src="images/c2.jpg" alt="Lazy Owl Image">
-        </div>
-        <div class="cau_left">
-          <h4><a href="details.html">branded tees</a></h4>
-          <a href="details.html" class="btn">shop</a>
-        </div>
-      </div>
-      <div class="item" onClick="location.href='details.html';">
-        <div class="cau_left">
-          <img class="lazyOwl" data-src="images/c3.jpg" alt="Lazy Owl Image">
-        </div>
-        <div class="cau_left">
-          <h4><a href="details.html">branded jeens</a></h4>
-          <a href="details.html" class="btn">shop</a>
-        </div>
-      </div>
-    </div>
-    <!----//End-img-cursual---->
-  </div>
+
   <!-- start main1 -->
-  <div class="main_bg1">
-    <div class="wrap">
-      <div class="main1">
-        <h2>featured products</h2>
+    <div class="main_bg1">
+      <div class="wrap">
+        <div class="main1">
+          <h2>featured products</h2>
+        </div>
       </div>
     </div>
-  </div>
   <!-- start main -->
   <div class="main_bg">
     <div class="wrap">
@@ -298,7 +233,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  /*@import "../mycss/owl.carousel.css";*/
+  @import "../mycss/owl.carousel.css";
 
 
 

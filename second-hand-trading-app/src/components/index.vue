@@ -10,17 +10,21 @@
         </div>
         <div class="h_icon">
          <ul class="icon1 sub-icon1">
-            <li><a class="active-icon c1" href="#"><i>$300</i></a>
+            <li><a class="active-icon c1" href="#" @click="login"><i>login</i></a>
               <ul class="sub-icon1 list">
                 <li><h3>shopping cart empty</h3><a href=""></a></li>
-                <li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
+                <li><p>if items in your wishlit are missing, <a href="#">contact us</a> to view them</p></li>
               </ul>
             </li>
-            <li><a><i><router-link :to="{name: 'login'}" class="icon-login">登录</router-link></i></a>
-            </li>
-
           </ul>
-
+          <ul class="icon1 sub-icon1">
+            <li><a class="active-icon c1" href="#" @click="addGoods"><i>addGoods</i></a>
+              <ul class="sub-icon1 list">
+                <li><h3>shopping cart empty</h3><a href=""></a></li>
+                <li><p>if items in your wishlit are missing, <a href="#l">contact us</a> to view them</p></li>
+              </ul>
+            </li>
+          </ul>
 
 
         </div>
@@ -117,7 +121,24 @@
           <div class="clear"></div>
         </div>
         <!-- end grids_of_3 -->
+
+<!--        这些是与数据库直接相关的-->
+        <div class="grids_of_3" v-for=" i in 3" :key="i">
+        <div class="grid1_of_3" v-for="o in 3" :key="o">
+          <div @click="toDetail">
+            <img src="../assets/pic4.jpg" alt=""/>
+            <h3>branded bags</h3>
+            <div class="price">
+              <h4>$300<span>indulge</span></h4>
+            </div>
+            <span class="b_btm"></span>
+          </div>
+        </div>
+          <div class="clear"></div>
       </div>
+<!--        end of main-->
+      </div>
+
     </div>
   </div>
   <!-- start footer -->
@@ -211,10 +232,14 @@ export default {
   name: 'index',
    data () {
         return {
-            message: localStorage.getItem('username'),
+          message: localStorage.getItem('username'),
+          goodsData:[],
 
         }
     },
+  mounted(){
+    this.loadGoods();
+  },
   methods:{
     toDetail(){
       this.$router.push({ path: `/detail` });
@@ -225,6 +250,36 @@ export default {
       this.$router.push({ path: `/login` });
 
 
+    },
+    addGoods(){
+      this.$router.push({ path: `/addGoods` });
+    },
+    loadGoods(){
+      this.$myAxios.get('/goods/getAllGoods')
+              .then((response)=> {
+                var that = this;
+                for(var i=0;i<response.data.length;i++){
+                  var objproject = {
+                    "goods_id" : response.data[i].goods_id,//这个是赋值到一个数组对象里面去，开发的时候就是取到里面的值进行一个逻辑判断，要干嘛干嘛的。这个也加上他的下标
+                    "contact" : response.data[i].contact,
+                    "cover" : response.data[i].cover,
+                    "detail" : response.data[i].detail,
+                    "status" :response.data[i].status,
+                    "title" :response.data[i].title,
+                    "username":response.data[i].username,
+                  }
+                  that.goodsData.push(objproject);
+                  console.log(that.goodsData[i]);
+
+                  console.log(that.goodsData[i].title);
+
+                }
+                this.$forceUpdate();//强制刷新
+
+              })
+              .catch(function (error) {
+                console.log(error);  // 失败
+              });
     },
   }
 

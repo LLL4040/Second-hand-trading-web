@@ -3,15 +3,13 @@ package Daoimpl;
 
 import java.util.List;
 
-import org.hibernate.Session;
+
+import Dao.GoodsDao;
+import Entity.Goods;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import Repository.GoodsRepository;
-import Entity.Goods;
-import Util.HibernateUtil;
-import Dao.GoodsDao;
 
 
  @Repository

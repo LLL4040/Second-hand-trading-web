@@ -9,13 +9,23 @@
                 </div>
                 <div class="h_icon">
                     <ul class="icon1 sub-icon1">
-                        <li><a class="active-icon c1" href="#"><i>$300</i></a>
+                        <li><a class="active-icon c1" href="#" @click="login"><i>login</i></a>
                             <ul class="sub-icon1 list">
                                 <li><h3>shopping cart empty</h3><a href=""></a></li>
-                                <li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
+                                <li><p>if items in your wishlit are missing, <a href="#">contact us</a> to view them</p></li>
                             </ul>
                         </li>
                     </ul>
+                    <ul class="icon1 sub-icon1">
+                        <li><a class="active-icon c1" href="#" @click="addGoods"><i>addGoods</i></a>
+                            <ul class="sub-icon1 list">
+                                <li><h3>shopping cart empty</h3><a href=""></a></li>
+                                <li><p>if items in your wishlit are missing, <a href="#l">contact us</a> to view them</p></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
                 </div>
                 <div class="h_search">
                     <form>
@@ -27,7 +37,13 @@
             </div>
         </div>
     </div>
-
+    <div class="main_bg1">
+        <div class="wrap">
+            <div class="main1">
+                <h2>featured products</h2>
+            </div>
+        </div>
+    </div>
     <!-- start main -->
     <div class="main_bg">
         <div class="wrap">
@@ -67,9 +83,10 @@
                                                 </ul>
                                             </div>
                                         </div>
+<!--                                        商品图片显示在这里-->
                                         <div class="product-image">
-                                            <a class="cs-fancybox-thumbs cloud-zoom" rel="adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5" data-fancybox-group="thumb" href="images/0001-2.jpg" title="Women Shorts" alt="Women Shorts">
-                                                <img src="images/0001-2.jpg" alt="Women Shorts" title="Women Shorts" />
+                                            <a class="cs-fancybox-thumbs cloud-zoom" rel="adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5" data-fancybox-group="thumb" title="Women Shorts" alt="Women Shorts">
+                                                <img src="../assets/pic1.jpg" alt="Women Shorts" title="Women Shorts" />
                                             </a>
                                         </div>
 
@@ -81,56 +98,101 @@
                         <!-- start span1_of_1 -->
                         <div class="span1_of_1_des">
                             <div class="desc1">
-                                <h3>Lorem Ipsum is simply dummy text </h3>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+<!--                                商品信息显示在这里-->
+                                <h3>商品名字：{{title}} </h3>
+                                <p>商品详情：{{detail}}</p>
                                 <h5>Rs. 399 <a href="#">click for offer</a></h5>
                                 <div class="available">
-                                    <h4>Available Options :</h4>
-                                    <ul>
-                                        <li>Color:
-                                            <select>
-                                                <option>Silver</option>
-                                                <option>Black</option>
-                                                <option>Dark Black</option>
-                                                <option>Red</option>
-                                            </select></li>
-                                        <li>Size:
-                                            <select>
-                                                <option>L</option>
-                                                <option>XL</option>
-                                                <option>S</option>
-                                                <option>M</option>
-                                            </select>
-                                        </li>
-                                        <li>Quality:
-                                            <select>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </li>
-                                    </ul>
-                                    <div class="btn_form">
+                                    <h4>商家名字：{{seller}}</h4>
+                                    <h4>联系方式：{{contact}}</h4>
+                                    <div class="btn_form" @click="followUser(seller)">
                                         <form>
-                                            <input type="submit" value="add to cart" title="" />
+                                            <input type="addComment" value="follow the user"/>
                                         </form>
                                     </div>
-                                    <span class="span_right"><a href="#">login to save in wishlist </a></span>
                                     <div class="clear"></div>
-                                </div>
-                                <div class="share-desc">
-                                    <div class="share">
-                                        <h4>Share Product :</h4>
-                                        <ul class="share_nav">
-                                            <li><a href="#"><img src="../assets/facebook.png" title="facebook"></a></li>
-                                            <li><a href="#"><img src="../assets/twitter.png" title="Twiiter"></a></li>
-                                            <li><a href="#"><img src="../assets/rss.png" title="Rss"></a></li>
-                                            <li><a href="#"><img src="../assets/gpluse.png" title="Google+"></a></li>
-                                        </ul>
+                                    <div class="btn_form">
+                                        <form>
+                                            <input type="addComment" value="add to collect"/>
+                                        </form>
                                     </div>
                                     <div class="clear"></div>
+                                    <div class="btn_form" @click="changedialogVisible">
+                                        <form>
+                                            <input type="addComment" value="add  comment"/>
+                                        </form>
+                                    </div>
+<!--                                    这是增加评价的内容-->
+                                    <el-dialog
+                                            title="增加评价"
+                                            :visible.sync="dialogVisible"
+                                            width="30%"
+                                    >
+                                        <el-row>
+                                            <el-col>
+                                        <el-row><el-col><h3>{{title}}</h3></el-col></el-row>
+                                        <el-row>
+                                            <a><img src="../assets/pic1.jpg" class="img-thumbnail book2"></a>
+                                        </el-row>
+                                            </el-col>
+                                            <el-col>
+                                               <el-row>
+                                                   <el-input
+                                                           type="textarea"
+                                                           :rows="2"
+                                                           placeholder="请输入内容"
+                                                           v-model="commentarea">
+                                                   </el-input>
+                                               </el-row>
+                                            </el-col>
+                                        </el-row>
+
+
+
+                                        <span slot="footer" class="dialog-footer">
+
+                                        <el-button-group>
+                                        <el-button @click="dialogVisible = false">取 消</el-button>
+                                        <el-button type="danger" @click="addComment(seller)">确 定</el-button>
+                                         </el-button-group>
+                                        </span>
+                                    </el-dialog>
+<!--                                    <span class="span_right"><a href="#">login to save in wishlist </a></span>-->
+                                </div>
+<!--                                <div class="span_right"></div>-->
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+<!--                        此处是评论-->
+                        <div class="grids_of_3">
+                            <div class="grid1_of_3">
+                                <div>
+                                    <h3>用户1</h3>
+                                    <div class="price">
+                                        <h4><div class="clear"></div>商家信誉好好好好好好好好好好</h4>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <span class="b_btm"></span>
+                                </div>
+                            </div>
+                            <div class="grid1_of_3">
+                                <div>
+                                    <h3>用户2</h3>
+                                    <div class="price">
+                                        <h4><div class="clear"></div>评价不商家信赞赞赞赞挺好是是是</h4>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <span class="b_btm"></span>
+                                </div>
+                            </div>
+                            <div class="grid1_of_3">
+                                <div>
+                                    <h3>用户3</h3>
+                                    <div class="price">
+                                        <h4><div class="clear"></div>评价不商家信赞赞赞赞挺好是是是好好</h4>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <span class="b_btm"></span>
                                 </div>
                             </div>
                         </div>
@@ -298,22 +360,7 @@
     <div class="footer_bg1">
         <div class="wrap">
             <div class="footer">
-                <!-- scroll_top_btn -->
-<!--                <script type="text/javascript">-->
-<!--                    $(document).ready(function() {-->
 
-<!--                        var defaults = {-->
-<!--                            containerID: 'toTop', // fading element id-->
-<!--                            containerHoverID: 'toTopHover', // fading element hover id-->
-<!--                            scrollSpeed: 1200,-->
-<!--                            easingType: 'linear'-->
-<!--                        };-->
-
-
-<!--                        $().UItoTop({ easingType: 'easeOutQuart' });-->
-
-<!--                    });-->
-<!--                </script>-->
                 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
                 <!--end scroll_top_btn -->
                 <div class="copy">
@@ -329,10 +376,134 @@
 
 <script>
     export default {
-        name: "detail"
+        name: "detail",
+        data () {
+            return {
+
+                goodsData:[],
+                goods_id: 0,
+                contact:"",
+                cover:"",
+                detail:"",
+                status:"",
+                title:"",
+                username:"",
+                seller:"",
+                dialogVisible: false,
+                commentarea:"",
+            }
+        },
+        mounted(){
+            this.initGoods();
+        },
+        methods:{
+
+            login(){
+                this.$router.push({ path: `/login` });
+
+
+            },
+            addGoods(){
+                this.$router.push({ path: `/addGoods` });
+            },
+            changedialogVisible(){
+                if(this.dialogVisible==1){
+                    this.dialogVisible=0;
+                }else {
+                    this.dialogVisible=1;
+                }
+            },
+            initGoods(){
+                console.log("sss"+this.GLOBAL.goods_id);
+                var that = this;
+                that.$myAxios.get('/goods/findGoodsById',{
+                    params:{
+                        goods_id:that.GLOBAL.goods_id,
+
+                    }
+                })
+                    .then(function (response) {
+                        // console.log(response);
+                        that.goods_id=response.data.goods_id;
+                        that.contact=response.data.contact;
+                        that.cover=response.data.cover;
+                        that.detail = response.data.detail;
+                        that.status=response.data.status;
+                        that.title=response.data.title;
+                        that.seller=response.data.username;
+                        console.log(response.data.title);
+
+
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+                    .then(function () {
+                        //always executed
+                        that.$forceUpdate();//强制刷新
+                    })
+            },
+            addComment(seller){
+                this.changedialogVisible();
+                var that = this;
+                that.$myAxios.get('/comment/saveComments',{
+                    params:{
+                        username: "2",
+                        seller:seller,
+                        comment:this.commentarea,
+
+
+                    }
+                })
+                    .then(function (response) {
+                        console.log(response);
+                        if(response.data=="save comments"){alert("评论商家成功");}
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+                    .then(function () {
+                        //always executed
+
+
+                    })
+            },
+            //这里seller指的是商家的名字
+            followUser(seller){
+
+                this.$myAxios.get('/follow/saveFollow',{
+                    params:{
+                        seller:seller,
+                        username: 1,
+
+                    }
+                })
+                    .then(function (response) {
+                        console.log(response);
+                        if(response.data=="save follow"){alert("关注商家成功");}
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+                    .then(function () {
+                        //always executed
+
+
+                    })
+            }
+        }
+
     }
+
 </script>
 
 <style scoped>
+    .book2 {
+        padding:2%;
+        outline: none;
+        position: relative;
+        height: 30%;
+        width: 20%;
+    }
 
 </style>

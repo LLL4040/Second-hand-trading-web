@@ -30,8 +30,8 @@ public class Goods implements Serializable{
 	@Column(name = "status")
 	private int status;
 
-	
-	
+
+
 	public int getGoods_id() {
 		return goods_id;
 	}

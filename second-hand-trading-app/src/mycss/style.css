@@ -1026,6 +1026,26 @@ p.para{
 .btn_form form input[type="submit"]:hover{
 	background: #3CC395;
 }
+.btn_form form input[type="addComment"]{
+	font-family: 'Microsoft yahei', sans-serif;
+	cursor:pointer;
+	border:none;
+	outline:none;
+	display: inline-block;
+	font-size: 1em;
+	padding: 10px 34px;
+	background: #555555;
+	color:#fff;
+	text-transform: capitalize;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.btn_form form input[type="addComment"]:hover{
+	background: #3CC395;
+}
+
 .span_right{
 	float: right;
 }

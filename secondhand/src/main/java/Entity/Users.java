@@ -1,7 +1,5 @@
 package Entity;
 
-
-
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -20,10 +18,10 @@ public class Users implements Serializable{
 	@Column(name = "email")
 	private String email;
 	@Column(name = "phone_number")
-	private long phone_number;	
+	private long phone_number;
 
-	
-	
+
+
 
 
 	public String getUserame() {

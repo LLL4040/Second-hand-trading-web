@@ -6,14 +6,14 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
- 
+
 public class HibernateUtil {
- 
+
 	private static SessionFactory sessionFactory;
 	private static Configuration configuration;
 	//创建线程局部变量threadLocal，用来保存Hibernate的Session
 	private static final ThreadLocal<Session> threadLocal = new ThreadLocal<Session>();
-	
+
 	//使用静态代码块初始化Hibernate
 	static{
 		try{
@@ -25,13 +25,13 @@ public class HibernateUtil {
 			throw new ExceptionInInitializerError(ex);
 		}
 	}
-	
+
 	//获得SessionFactory
 	public static SessionFactory getSessionFactory(){
 		return sessionFactory;
 	}
-	
-	
+
+
 	//获得ThreadLocal对象管理的Session实例
 	public static Session getSession() throws HibernateException {
 		Session session = (Session)threadLocal.get();
@@ -44,10 +44,10 @@ public class HibernateUtil {
 			//将新打开的Session实例保存到线程局部变量threadLocal中
 			threadLocal.set(session);
 		}
-		
+
 		return session;
 	}
-	
+
 	//关闭Session实例
 	public static void closeSession() throws HibernateException {
 		//从线程局部变量threadLocal中获取之前存入的Session实例
@@ -57,8 +57,8 @@ public class HibernateUtil {
 			session.close();
 		}
 	}
-	
-	
+
+
 	//重建SessionFactory
 	public static void rebuildSessionFactory() {
 		try{
@@ -69,8 +69,8 @@ public class HibernateUtil {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 	//关闭缓存和连接池
 	public static void shutdown(){
 		getSessionFactory().close();

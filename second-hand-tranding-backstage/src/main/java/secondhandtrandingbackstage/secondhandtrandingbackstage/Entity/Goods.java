@@ -18,7 +18,7 @@ public class Goods implements Serializable{
     @Column(name = "goods_id")
 	private int goods_id;
 	@Column(name = "cover")
-	private int cover;
+	private byte[] cover;
 	@Column(name = "title")
 	private String title;
 	@Column(name = "detail")
@@ -38,10 +38,10 @@ public class Goods implements Serializable{
 	public void setGoods_id(int goods_id) {
 		this.goods_id = goods_id;
 	}
-	public int getCover() {
+	public byte[] getCover() {
 		return cover;
 	}
-	public void setCover(int cover) {
+	public void setCover(byte[] cover) {
 		this.cover = cover;
 	}
 
@@ -76,7 +76,7 @@ public class Goods implements Serializable{
 		this.status = status;
 	}
 
-	public Goods(int goods_id, int cover, String title,String detail,String username,String contact,int status) {
+	public Goods(int goods_id, byte[] cover, String title,String detail,String username,String contact,int status) {
 		super();
 		this.goods_id = goods_id;
 		this.cover = cover;

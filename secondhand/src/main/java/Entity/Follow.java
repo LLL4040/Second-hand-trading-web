@@ -19,8 +19,8 @@ public class Follow implements Serializable{
 	private String seller;
 
 
-	
-	
+
+
 
 
 	public String getUserame() {

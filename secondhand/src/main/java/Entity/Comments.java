@@ -21,10 +21,10 @@ public class Comments implements Serializable{
 	@Column(name = "seller")
 	private String seller;
 	@Column(name = "comment")
-	private String comment;	
+	private String comment;
 
-	
-	
+
+
 
 
 	public String getUserame() {

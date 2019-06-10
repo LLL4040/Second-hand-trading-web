@@ -1,4 +1,4 @@
-package Dao;
+package Daoimpl;
 
 
 
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
+ @Repository
 public  class CollectDaoimpl implements CollectDao {
 	 @Autowired
      private CollectRepository collectRepository;

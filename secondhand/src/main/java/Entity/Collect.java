@@ -1,8 +1,5 @@
 package Entity;
 
-
-
-
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -20,8 +17,8 @@ public class Collect implements Serializable{
 	private int goods_id;
 
 
-	
-	
+
+
 
 
 	public String getUserame() {

@@ -13,11 +13,11 @@ public  class GoodsDaoimpl implements GoodsDao {
      private GoodsRepository goodsRepository;
 
 	 @Override
-     public Goods findone(Integer id) {
-         return goodsRepository.getOne(id);
+     public Goods findone(int id) {
+         return goodsRepository.findGoodsById(id);
      }
 	 @Override
-	 public boolean Exists(Integer id) {
+	 public boolean Exists(int id) {
 		 return goodsRepository.existsById(id);
 	 }
 	 @Override
@@ -25,7 +25,7 @@ public  class GoodsDaoimpl implements GoodsDao {
 		 goodsRepository.save(car);
 	 }
 	 @Override
-	 public void Delete(Integer id) {
+	 public void Delete(int id) {
 		 goodsRepository.deleteById(id);
 	 }
 	 @Override

@@ -177,7 +177,7 @@
         },
         mounted () {
             localStorage.clear()
-            localStorage.setItem('username', '登陆')
+            localStorage.setItem('username', '1')
         },
         methods: {
             /* 提交进行判断的函数 */

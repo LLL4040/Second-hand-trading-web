@@ -10,7 +10,7 @@
         </div>
         <div class="h_icon">
          <ul class="icon1 sub-icon1">
-            <li><a class="active-icon c1" href="#" @click="login"><i>login</i></a>
+            <li><a class="active-icon c1" href="#" @click="login"><i>{{message}}</i></a>
               <ul class="sub-icon1 list">
                 <li><h3>shopping cart empty</h3><a href=""></a></li>
                 <li><p>if items in your wishlit are missing, <a href="#">contact us</a> to view them</p></li>
@@ -123,17 +123,38 @@
         <!-- end grids_of_3 -->
 
 <!--        这些是与数据库直接相关的-->
-        <div class="grids_of_3" v-for=" i in 3" :key="i">
-        <div class="grid1_of_3" v-for="o in 3" :key="o">
-          <div @click="toDetail">
+        <div class="grids_of_3" v-for=" o in goodsData.length/3" :key="o">
+        <div class="grid1_of_3">
+          <div @click="toDetail(goodsData[3*(o-1)].goods_id)">
             <img src="../assets/pic4.jpg" alt=""/>
-            <h3>branded bags</h3>
+            <h3>{{goodsData[3*(o-1)].title}}</h3>
             <div class="price">
-              <h4>$300<span>indulge</span></h4>
+              <h4>{{goodsData[3*(o-1)].detail}}<span>detail</span></h4>
             </div>
             <span class="b_btm"></span>
           </div>
         </div>
+          <div class="grid1_of_3">
+          <div @click="toDetail(goodsData[3*(o-1)+1].goods_id)">
+            <img src="../assets/pic4.jpg" alt=""/>
+            <h3>{{goodsData[3*(o-1)+1].title}}</h3>
+            <div class="price">
+              <h4>{{goodsData[3*(o-1)+1].detail}}<span>detail</span></h4>
+            </div>
+            <span class="b_btm"></span>
+          </div>
+          </div>
+          <div class="grid1_of_3">
+          <div @click="toDetail(goodsData[3*(o-1)+2].goods_id)">
+            <img src="../assets/pic4.jpg" alt=""/>
+            <h3>{{goodsData[3*(o-1)+2].title}}</h3>
+            <div class="price">
+              <h4>{{goodsData[3*(o-1)+2].detail}}<span>detail</span></h4>
+            </div>
+            <span class="b_btm"></span>
+          </div>
+          </div>
+
           <div class="clear"></div>
       </div>
 <!--        end of main-->
@@ -234,6 +255,7 @@ export default {
         return {
           message: localStorage.getItem('username'),
           goodsData:[],
+          goods_id: 0,
 
         }
     },
@@ -241,7 +263,9 @@ export default {
     this.loadGoods();
   },
   methods:{
-    toDetail(){
+    toDetail(goods_id){
+      this.GLOBAL.goods_id=goods_id;
+      console.log(this.GLOBAL.goods_id);
       this.$router.push({ path: `/detail` });
 
 

@@ -1,14 +1,13 @@
 package Daoimpl;
 
 
+
+import Dao.UsersDao;
+import Entity.Users;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
-import Repository.UsersRepository;
-import Entity.Users;
-import Util.HibernateUtil;
-import Dao.UsersDao;
 
  @Repository
 public  class UsersDaoimpl implements UsersDao {

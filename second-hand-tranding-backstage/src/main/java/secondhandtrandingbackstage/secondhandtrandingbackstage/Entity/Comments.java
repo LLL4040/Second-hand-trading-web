@@ -20,10 +20,6 @@ public class Comments implements Serializable {
     @Column(name = "comment")
     private String comment;
 
-
-
-
-
     public String getUserame() {
         return username;
     }

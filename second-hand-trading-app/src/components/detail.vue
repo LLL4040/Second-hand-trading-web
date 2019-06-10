@@ -111,6 +111,7 @@
                                         </form>
                                     </div>
                                     <div class="clear"></div>
+
                                     <div class="btn_form">
                                         <form>
                                             <input type="addComment" value="add to collect"/>
@@ -158,6 +159,12 @@
                                         </span>
                                     </el-dialog>
 <!--                                    <span class="span_right"><a href="#">login to save in wishlist </a></span>-->
+                                    <div class="btn_form" @click="deleteGoods(goods_id)" v-if="message==seller">
+                                        <form>
+                                            <input type="addComment" value="Delete the Goods"/>
+                                        </form>
+                                    </div>
+
                                 </div>
 <!--                                <div class="span_right"></div>-->
                             </div>
@@ -491,6 +498,9 @@
 
 
                     })
+            },
+            deleteGoods(goods_id){
+                console.log(goods_id);
             }
         }
 

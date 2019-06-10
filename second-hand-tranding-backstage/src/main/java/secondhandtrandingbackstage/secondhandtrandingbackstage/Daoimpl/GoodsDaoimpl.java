@@ -11,7 +11,7 @@ import secondhandtrandingbackstage.secondhandtrandingbackstage.Repository.GoodsR
 public  class GoodsDaoimpl implements GoodsDao {
 	 @Autowired
      private GoodsRepository goodsRepository;
-	// ����û�
+
 	 @Override
      public Goods findone(Integer id) {
          return goodsRepository.getOne(id);
@@ -32,6 +32,16 @@ public  class GoodsDaoimpl implements GoodsDao {
 	 public void Update() {
 		 goodsRepository.flush();
 	 }
+	 @Override
+	public Iterable<Goods> getAllGoods(){
+	 	return goodsRepository.findAll();
+	 }
+	@Override
+	public String delectGoodsById(int Good_id){
+	 	Goods g1 =goodsRepository.getOne(Good_id);
+		goodsRepository.delete(g1);
+		return "删除物品成功";
+	}
 
 }
 

@@ -11,13 +11,25 @@ import secondhandtrandingbackstage.secondhandtrandingbackstage.Service.GoodsServ
 public class GoodsController {
     @Autowired
     private GoodsService goodsService;
-    @GetMapping(path="/addgoods") // Map ONLY GET Requests
+    @GetMapping(path="/saveGoods") // Map ONLY GET Requests
     public @ResponseBody
-    String addItem (@RequestParam int goods_id,@RequestParam int cover,@RequestParam String title,
+    String saveGoods (@RequestParam int goods_id,@RequestParam int cover,@RequestParam String title,
                     @RequestParam String detail,@RequestParam String contact
             ,@RequestParam String username,@RequestParam int status) {
 
         Goods g1=new Goods(goods_id,cover,title,detail,username,contact,status);
+        goodsService.saveGoods(g1);
         return "ok";
     }
+    @GetMapping(path="/findGoodsById")//根据物品的id来找物品
+    public @ResponseBody Goods findGoodsById(@RequestParam int Good_id) {
+        // This returns a JSON or XML with the books
+        return goodsService.findGoodsById(Good_id);
+    }
+    @GetMapping(path="/delectGoodsById")//根据物品的id来删除物品
+    public @ResponseBody String delectGoodsById(@RequestParam int Good_id) {
+        // This returns a JSON or XML with the books
+        return goodsService.delectGoodsById(Good_id);
+    }
+
 }

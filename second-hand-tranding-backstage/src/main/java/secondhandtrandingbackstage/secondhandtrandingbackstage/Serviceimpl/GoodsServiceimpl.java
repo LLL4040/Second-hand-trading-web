@@ -26,5 +26,13 @@ public class GoodsServiceimpl implements GoodsService {
     	 goodsDao.Save(goods);
     }
 
+    @Override
+    public Iterable<Goods> getAllGoods() {
+        return goodsDao.getAllGoods();
+    }
+    @Override
+    public String delectGoodsById(int Good_id){
+        return goodsDao.delectGoodsById(Good_id);
+    }
 }
 

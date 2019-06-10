@@ -7,6 +7,8 @@ import secondhandtrandingbackstage.secondhandtrandingbackstage.Dao.CollectDao;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Collect;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Repository.CollectRepository;
 
+import java.util.List;
+
 @Repository
 public  class CollectDaoimpl implements CollectDao {
 	 @Autowired
@@ -32,5 +34,9 @@ public  class CollectDaoimpl implements CollectDao {
 	 public void Update() {
 		 collectRepository.flush();
 	 }
+	@Override
+	public List<Collect> findmycollect(String id){
+		return collectRepository.findmyCollect(id);
+	}
 
 }

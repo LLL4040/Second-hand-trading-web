@@ -3,6 +3,8 @@ package secondhandtrandingbackstage.secondhandtrandingbackstage.Dao;
 
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Collect;
 
+import java.util.List;
+
 public interface CollectDao {
 
 	boolean Exists(String id);
@@ -10,6 +12,7 @@ public interface CollectDao {
 	Collect findone(String id);
 	void Delete(String id);
 	void Update();
+	List<Collect> findmycollect(String id);
 
 
 }

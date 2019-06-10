@@ -1,6 +1,8 @@
 package secondhandtrandingbackstage.secondhandtrandingbackstage.Service;
 
 
+import net.sf.json.JSONArray;
+import org.json.JSONException;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Collect;
 
 /**
@@ -10,4 +12,5 @@ public interface CollectService {
     Collect findCollectById(String id);
     void saveCollect(Collect collect);
     void deleteCollectById(String id) ;
+    JSONArray mycollect(String username) throws JSONException;
 }

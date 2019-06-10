@@ -62,7 +62,6 @@
                     </div>
                     <div>
                         <span><label>Subject</label></span>
-                        <span><textarea name="userMsg"> </textarea></span>
                     </div>
                     <div>
                         <span><input type="submit" class="" value="Submit us"></span>

@@ -5,11 +5,12 @@ import detail from './components/detail.vue'
 import login from './components/login.vue'
 import register from './components/register.vue'
 import addGoods from './components/addGoods.vue'
+import mycenter from './components/mycenter.vue'
 
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
@@ -44,6 +45,11 @@ export default new Router({
       path: '/addGoods',
       name: 'addGoods',
       component: addGoods
+    },
+    {
+      path: '/mycenter',
+      name: 'mycenter',
+      component: mycenter
     },
   ]
 })

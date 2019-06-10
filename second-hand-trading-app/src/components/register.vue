@@ -1,36 +1,38 @@
 
 <template>
     <div class="body">
-<div class="main">
-    <!-----start-main---->
-    <div class="inset">
-        <div class="social-icons">
-            <div class="span"><a href="#"><img src="../images/fb.png" alt=""/><i>Connect with Facebook </i><div class="clear"></div></a></div>
-            <div class="span1"><a href="#"><img src="../images/t-bird.png" alt=""/><i>Connect with Twitter</i><div class="clear"></div></a></div>
-            <div class="clear"></div>
-        </div>
-    </div>
-    <h2>Or sign up with</h2>
-    <form>
-        <div class="lable">
-            <input type="text" class="text" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}" id="active">
+        <div class="main">
+            <!-----start-main---->
+            <div class="inset">
+                <div class="social-icons">
+                    <div class="span"><a href="#"><img src="../images/fb.png" alt=""/><i>Connect with Facebook </i><div class="clear"></div></a></div>
+                    <div class="span1"><a href="#"><img src="../images/t-bird.png" alt=""/><i>Connect with Twitter</i><div class="clear"></div></a></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <h2>Or sign up with</h2>
+            <form>
+                <div class="lable">
+                    <input type="text" class="text" v-model="form.username" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'UserName';}" id="active">
 
-            <input type="text" class="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}">
+                    <input type="text" class="text" v-model="form.phone" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}">
+                </div>
+                <div class="clear"> </div>
+                <div class="lable-2">
+                    <input type="text" class="text" v-model="form.email" value="your@email.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'your@email.com ';}">
+                    <input type="password" class="text" v-model="form.password"  value="Password " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password ';}">
+                </div>
+                <div class="clear"> </div>
+                <h3>By creating an account, you agree to our <span><a href="#">Terms & Conditions</a> </span></h3>
+                <div @click="reg">
+                <div class="submit">
+                    <input type="submit"  value="Create account" >
+                </div>
+                </div>
+                <div class="clear"> </div>
+            </form>
+            <!-----//end-main---->
         </div>
-        <div class="clear"> </div>
-        <div class="lable-2">
-            <input type="text" class="text" value="your@email.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'your@email.com ';}">
-            <input type="password" class="text" value="Password " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password ';}">
-        </div>
-        <div class="clear"> </div>
-        <h3>By creating an account, you agree to our <span><a href="#">Terms & Conditions</a> </span></h3>
-        <div class="submit">
-            <input type="submit" onclick="myFunction()" value="Create account" >
-        </div>
-        <div class="clear"> </div>
-    </form>
-    <!-----//end-main---->
-</div>
 
     </div>
 </template>
@@ -368,3 +370,50 @@
                 line-height: 28px;
             }}}
 </style>
+<script>
+    export default {
+        name: 'register',
+        props: ['message'],
+        regsuccess: 0,
+        data () {
+            return {
+                itemList:{},
+                form: {
+                    username: '',
+                    password: '',
+                    phone: '',
+                    email: ''
+                }
+            }
+        },
+        mounted () {
+            localStorage.clear()
+            localStorage.setItem('username', 'login')
+        },
+        methods: {
+            /* 提交进行判断的函数 */
+            reg: function () {
+                const self = this
+                let url = '/my/register'
+                this.$myAxios.get(url,
+                    {
+                        params: {
+                            password: this.form.password,
+                            username: this.form.username,
+                            phone: this.form.phone,
+                            email: this.form.email,
+                        }
+                    })
+                    .then(function (res) {
+                        if (res.data.regsuccess === 1) {
+                            alert('注册成功')
+                            self.$router.push({path: '/'})
+                        }
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+            }
+        }
+    }
+</script>

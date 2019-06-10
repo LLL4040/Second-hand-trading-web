@@ -9,7 +9,7 @@
                 </div>
                 <div class="h_icon">
                     <ul class="icon1 sub-icon1">
-                        <li><a class="active-icon c1" href="#" @click="login"><i>login</i></a>
+                        <li><a class="active-icon c1" href="#" @click="login"><i>{{message}}</i></a>
                             <ul class="sub-icon1 list">
                                 <li><h3>shopping cart empty</h3><a href=""></a></li>
                                 <li><p>if items in your wishlit are missing, <a href="#">contact us</a> to view them</p></li>
@@ -391,6 +391,7 @@
                 seller:"",
                 dialogVisible: false,
                 commentarea:"",
+                message:this.GLOBAL.username,
             }
         },
         mounted(){
@@ -448,7 +449,7 @@
                 var that = this;
                 that.$myAxios.get('/comment/saveComments',{
                     params:{
-                        username: "2",
+                        username: this.GLOBAL.username,
                         seller:seller,
                         comment:this.commentarea,
 
@@ -474,7 +475,7 @@
                 this.$myAxios.get('/follow/saveFollow',{
                     params:{
                         seller:seller,
-                        username: 1,
+                        username: this.GLOBAL.username,
 
                     }
                 })

@@ -1,29 +1,151 @@
 
 <template>
 
-<div>
 
-<div class="login">
-    <div class="message">二手平台-登陆注册</div>
-    <div id="darkbannerwrap"></div>
+        <body>
+        <div class="header_bg">
+            <div class="wrap">
+                <div class="header">
+                    <div class="logo">
+                        <a href="index.html"><img src="../assets/logo.png" alt=""/> </a>
+                    </div>
+                    <div class="h_icon">
+                        <ul class="icon1 sub-icon1">
+                            <li><a class="active-icon c1" href="#" @click="login"><i>login</i></a>
+                                <ul class="sub-icon1 list">
+                                    <li><h3>shopping cart empty</h3><a href=""></a></li>
+                                    <li><p>if items in your wishlit are missing, <a href="#">contact us</a> to view them</p></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="icon1 sub-icon1">
+                            <li><a class="active-icon c1" href="#" @click="addGoods"><i>addGoods</i></a>
+                                <ul class="sub-icon1 list">
+                                    <li><h3>shopping cart empty</h3><a href=""></a></li>
+                                    <li><p>if items in your wishlit are missing, <a href="#l">contact us</a> to view them</p></li>
+                                </ul>
+                            </li>
+                        </ul>
 
-    <form>
-        <input name="username" placeholder="用户名"  type="text" v-model="form.id">
-        <hr class="hr15">
-        <input name="password" placeholder="密码"  type="password" v-model="form.password">
-        <hr class="hr15">
-        <input value="登录" style="width:40%;" type="submit" @click="submit">
-        <router-link :to="{name:'register'}"><input value="注册"  type="button" style="width:40%;"></router-link>
-        <hr class="hr20">
-        <!-- 帮助 <a onClick="alert('请联系管理员')">忘记密码</a> -->
-    </form>
+
+                    </div>
+                    <div class="h_search">
+                        <form>
+                            <input type="text" value="">
+                            <input type="submit" value="">
+                        </form>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="main_bg1">
+            <div class="wrap">
+                <div class="main1">
+                    <h2>featured products</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="login">
+            <div class="message">二手平台-登陆注册</div>
+            <div id="darkbannerwrap"></div>
+
+            <form>
+                <input name="username" placeholder="用户名"  type="text" v-model="username">
+                <hr class="hr15">
+                <input name="password" placeholder="密码"  type="password" v-model="password">
+                <hr class="hr15">
+                <input value="登录" style="width:40%;" type="submit" @click="sub">
+                <router-link :to="{name:'register'}"><input value="注册"  type="button" style="width:40%;"></router-link>
+                <hr class="hr20">
+                <!-- 帮助 <a onClick="alert('请联系管理员')">忘记密码</a> -->
+            </form>
 
 
-</div>
+        </div>
 
-<div class="copyright">© 2016品牌名称 by <a href="http://www.mycodes.net/" target="_blank">源码之家</a></div>
+        <!-- start footer -->
+        <div class="footer_bg">
+            <div class="wrap">
+                <div class="footer">
+                    <!-- start grids_of_4 -->
+                    <div class="grids_of_4">
+                        <div class="grid1_of_4">
+                            <h4>featured sale</h4>
+                            <ul class="f_nav">
+                                <li><a href="">alexis Hudson</a></li>
+                                <li><a href="">american apparel</a></li>
+                                <li><a href="">ben sherman</a></li>
+                                <li><a href="">big buddha</a></li>
+                                <li><a href="">channel</a></li>
+                                <li><a href="">christian audigier</a></li>
+                                <li><a href="">coach</a></li>
+                                <li><a href="">cole haan</a></li>
+                            </ul>
+                        </div>
+                        <div class="grid1_of_4">
+                            <h4>mens store</h4>
+                            <ul class="f_nav">
+                                <li><a href="">alexis Hudson</a></li>
+                                <li><a href="">american apparel</a></li>
+                                <li><a href="">ben sherman</a></li>
+                                <li><a href="">big buddha</a></li>
+                                <li><a href="">channel</a></li>
+                                <li><a href="">christian audigier</a></li>
+                                <li><a href="">coach</a></li>
+                                <li><a href="">cole haan</a></li>
+                            </ul>
+                        </div>
+                        <div class="grid1_of_4">
+                            <h4>women store</h4>
+                            <ul class="f_nav">
+                                <li><a href="">alexis Hudson</a></li>
+                                <li><a href="">american apparel</a></li>
+                                <li><a href="">ben sherman</a></li>
+                                <li><a href="">big buddha</a></li>
+                                <li><a href="">channel</a></li>
+                                <li><a href="">christian audigier</a></li>
+                                <li><a href="">coach</a></li>
+                                <li><a href="">cole haan</a></li>
+                            </ul>
+                        </div>
+                        <div class="grid1_of_4">
+                            <h4>quick links</h4>
+                            <ul class="f_nav">
+                                <li><a href="">alexis Hudson</a></li>
+                                <li><a href="">american apparel</a></li>
+                                <li><a href="">ben sherman</a></li>
+                                <li><a href="">big buddha</a></li>
+                                <li><a href="">channel</a></li>
+                                <li><a href="">christian audigier</a></li>
+                                <li><a href="">coach</a></li>
+                                <li><a href="">cole haan</a></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start footer -->
+        <div class="footer_bg1">
+            <div class="wrap">
+                <div class="footer">
+                    <!-- scroll_top_btn -->
 
-</div>
+                    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+                    <!--end scroll_top_btn -->
+                    <div class="copy">
+                        <p class="link">Copyright &copy; 2014.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> -  More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+        </body>
+
 </template>
 
 <style scoped>
@@ -103,7 +225,7 @@
         padding: 12px 24px;
         margin: 0px;
         font-size: 18px;
-        line-height: 24px;
+        line-height: 36px;
         text-align: center;
         white-space: nowrap;
         vertical-align: middle;
@@ -167,28 +289,50 @@
     export default {
         name: 'register',
         props: ['message'],
+        loginsuccess: 0,
         data () {
             return {
-                form: {
-                    id: '',
+
+                    username: '',
                     password: ''
-                }
+
             }
         },
         mounted () {
             localStorage.clear()
-            localStorage.setItem('username', '1')
+            localStorage.setItem('username', 'login')
+            localStorage.setItem('phone', 'null')
+            localStorage.setItem('email', 'null')
         },
         methods: {
             /* 提交进行判断的函数 */
-            submit: function () {
-
+            sub: function () {
+                const self = this
+                let url = '/my/login'
+                this.$myAxios.get(url,
+                    {
+                        params: {
+                            username: this.username,
+                            password: this.password,
+                        }
+                    })
+                    .then(function (res) {
+                        var itemlist = res.data
+                        self.itemList = itemlist
+                        console.log(self.itemList)
+                        if (res.data.loginsuccess === 1) {
                             alert('登陆成功')
-                            localStorage.setItem('username', this.form.id)
-                            localStorage.setItem('password', this.form.password)
+                            localStorage.setItem('username', res.data.name)
+                            localStorage.setItem('phone', res.data.phone)
+                            localStorage.setItem('email', res.data.email)
+                            console.log(res.data)
+                            self.$router.push({ path: `/` })
 
-                            this.$router.push({name: 'home'})
-
+                        }
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
             },
         }
     }

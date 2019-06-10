@@ -1,14 +1,13 @@
-package Dao;
+package secondhandtrandingbackstage.secondhandtrandingbackstage.Daoimpl;
 
 
-
-import Dao.CollectDao;
-import Entity.Collect;
-import org.hibernate.Transaction;
-import org.springframework.stereotype.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import secondhandtrandingbackstage.secondhandtrandingbackstage.Dao.CollectDao;
+import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Collect;
+import secondhandtrandingbackstage.secondhandtrandingbackstage.Repository.CollectRepository;
 
-
+@Repository
 public  class CollectDaoimpl implements CollectDao {
 	 @Autowired
      private CollectRepository collectRepository;

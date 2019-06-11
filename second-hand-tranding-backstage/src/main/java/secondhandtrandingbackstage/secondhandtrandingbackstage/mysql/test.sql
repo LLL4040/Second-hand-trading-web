@@ -1,1 +1,1 @@
-select * from Comments where seller=1
+select * from Comments where seller="1"

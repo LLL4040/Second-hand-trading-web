@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Comments;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Goods;
+import secondhandtrandingbackstage.secondhandtrandingbackstage.Repository.CommentsRepository;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Service.CommentsService;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Service.GoodsService;
 
@@ -13,6 +14,8 @@ import javax.xml.stream.events.Comment;
 @RequestMapping(path="/comment")
 @RestController
 public class CommentController {
+    @Autowired
+    private CommentsRepository commentsRepository;
     @Autowired
     private CommentsService commentsService;
     @GetMapping(path="/saveComments") // Map ONLY GET Requests
@@ -30,6 +33,7 @@ public class CommentController {
     public @ResponseBody
     Iterable<Comments> findcomment(@RequestParam String seller){
 
-        return commentsService.findAllByseller(seller);
+        return commentsRepository.findAllByseller(seller);
+        //return commentsService.findAllByseller(seller);
     }
 }

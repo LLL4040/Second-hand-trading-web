@@ -546,7 +546,7 @@
                                 "username" : response.data[i].userame,
                                 "seller" : response.data[i].seller,
                                 "comment" : response.data[i].comment,
-                                "comments_id" :response.data[i].comments_id,
+                                //"comments_id" :response.data[i].comments_id,
                             }
                             that.commentData.push(objproject);
                             console.log(that.commentData[i]);

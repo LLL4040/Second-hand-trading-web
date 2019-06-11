@@ -36,7 +36,7 @@ public  class CollectDaoimpl implements CollectDao {
 	 }
 	@Override
 	public List<Collect> findmycollect(String id){
-		return collectRepository.findmyCollect(id);
+	 	return collectRepository.findmyCollect(id);
 	}
 
 }

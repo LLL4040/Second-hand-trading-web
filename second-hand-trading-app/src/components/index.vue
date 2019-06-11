@@ -123,7 +123,7 @@
         <!-- end grids_of_3 -->
 
 <!--        这些是与数据库直接相关的-->
-        <div class="grids_of_3" v-for=" o in goodsData.length/3" :key="o">
+        <div class="grids_of_3" v-for=" o in Math.floor((goodsData.length)/3)" :key="o">
         <div class="grid1_of_3">
           <div @click="toDetail(goodsData[3*(o-1)].goods_id)">
             <img src="../assets/pic4.jpg" alt=""/>

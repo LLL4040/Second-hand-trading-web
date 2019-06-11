@@ -11,6 +11,7 @@ import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Collect;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Service.CollectService;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -44,6 +45,7 @@ public class CollectServiceimpl implements CollectService {
         JSONObject jsonobj = new JSONObject();
         List<Collect> allcollect=new ArrayList<Collect>();
         allcollect=collectDao.findmycollect(username);
+        System.out.println(Arrays.toString(allcollect.toArray()));
         Iterator<Collect> iter = allcollect.iterator();
         Collect rs=new Collect();
         while(iter.hasNext()){  //执行过程中会执行数据锁定，性能稍差，若在循环过程中要去掉某个元素只能调用iter.remove()方法。

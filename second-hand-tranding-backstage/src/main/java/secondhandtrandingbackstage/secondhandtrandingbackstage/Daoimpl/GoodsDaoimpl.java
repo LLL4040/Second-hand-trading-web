@@ -40,7 +40,7 @@ public  class GoodsDaoimpl implements GoodsDao {
 	public String delectGoodsById(int Good_id){
 	 	Goods g1 =goodsRepository.getOne(Good_id);
 		goodsRepository.delete(g1);
-		return "删除物品成功";
+		return "delete goods success";
 	}
 
 }

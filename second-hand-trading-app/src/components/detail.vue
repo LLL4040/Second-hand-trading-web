@@ -501,6 +501,25 @@
             },
             deleteGoods(goods_id){
                 console.log(goods_id);
+                this.$myAxios.get('/goods/delectGoodsById',{
+                    params:{
+                        goods_id:goods_id,
+
+                    }
+                })
+                    .then(function (response) {
+                        console.log(response);
+                        if(response.data=="delete goods success"){alert("删除商品成功");}
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+                    .then(function () {
+                        //always executed
+                        this.$router.push({ path: `/` });
+
+
+                    })
             }
         }
 

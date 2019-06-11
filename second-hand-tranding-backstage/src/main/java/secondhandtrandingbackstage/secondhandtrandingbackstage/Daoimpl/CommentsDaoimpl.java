@@ -31,6 +31,9 @@ public  class CommentsDaoimpl implements CommentsDao {
 	 public void Update() {
 		 commentsRepository.flush();
 	 }
-
+	 @Override
+	 public Iterable<Comments> findAllByseller(String seller){
+	 	return commentsRepository.findAllByseller(seller);
+	 }
 }
 

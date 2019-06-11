@@ -171,12 +171,13 @@
                         </div>
                         <div class="clear"></div>
 <!--                        此处是评论-->
-                        <div class="grids_of_3">
+                        <div class="grids_of_3" v-for=" o in Math.floor((commentData.length)/3)" :key="o">
                             <div class="grid1_of_3">
                                 <div>
-                                    <h3>用户1</h3>
+<!--                                    username是用户的名字-->
+                                    <h3>用户{{commentData[3*(o-1)].username}}评价</h3>
                                     <div class="price">
-                                        <h4><div class="clear"></div>商家信誉好好好好好好好好好好</h4>
+                                        <h4><div class="clear"></div>{{commentData[3*(o-1)].comment}}</h4>
                                     </div>
                                     <div class="clear"></div>
                                     <span class="b_btm"></span>
@@ -184,9 +185,9 @@
                             </div>
                             <div class="grid1_of_3">
                                 <div>
-                                    <h3>用户2</h3>
+                                    <h3>用户{{commentData[3*(o-1)+1].username}}评价</h3>
                                     <div class="price">
-                                        <h4><div class="clear"></div>评价不商家信赞赞赞赞挺好是是是</h4>
+                                        <h4><div class="clear"></div>{{commentData[3*(o-1)+1].comment}}</h4>
                                     </div>
                                     <div class="clear"></div>
                                     <span class="b_btm"></span>
@@ -194,14 +195,15 @@
                             </div>
                             <div class="grid1_of_3">
                                 <div>
-                                    <h3>用户3</h3>
+                                    <h3>用户{{commentData[3*(o-1)+2].username}}评价</h3>
                                     <div class="price">
-                                        <h4><div class="clear"></div>评价不商家信赞赞赞赞挺好是是是好好</h4>
+                                        <h4><div class="clear"></div>{{commentData[3*(o-1)+2].comment}}</h4>
                                     </div>
                                     <div class="clear"></div>
                                     <span class="b_btm"></span>
                                 </div>
                             </div>
+                            <div class="clear"></div>
                         </div>
                         <div class="clear"></div>
                         <!-- start tabs -->
@@ -386,8 +388,9 @@
         name: "detail",
         data () {
             return {
-
+                commentData:[],
                 goodsData:[],
+
                 goods_id: 0,
                 contact:"",
                 cover:"",
@@ -399,10 +402,13 @@
                 dialogVisible: false,
                 commentarea:"",
                 message:this.GLOBAL.username,
+
+
             }
         },
         mounted(){
             this.initGoods();
+
         },
         methods:{
 
@@ -448,7 +454,9 @@
                     })
                     .then(function () {
                         //always executed
-                        that.$forceUpdate();//强制刷新
+                        //that.loadComment(that.seller);
+                        that.$options.methods.loadComment.bind(that)();
+                        //that.$forceUpdate();//强制刷新
                     })
             },
             addComment(seller){
@@ -520,7 +528,40 @@
 
 
                     })
+            },
+            loadComment(){
+
+                var that= this;
+                this.$myAxios.get('/comment/findAllByseller',{
+                    params:{
+                        seller:this.seller
+                    }
+                })
+                    .then(function (response)  {
+
+                        console.log(response);
+                        for(var i=0;i<response.data.length;i++){
+                            var objproject = {
+                                "comment_id" : response.data[i].comment_id,
+                                "username" : response.data[i].userame,
+                                "seller" : response.data[i].seller,
+                                "comment" : response.data[i].comment,
+                                "comments_id" :response.data[i].comments_id,
+                            }
+                            that.commentData.push(objproject);
+                            console.log(that.commentData[i]);
+
+                            console.log(that.commentData[i].comment);
+
+                        }
+                        this.$forceUpdate();//强制刷新
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+
             }
+
         }
 
     }

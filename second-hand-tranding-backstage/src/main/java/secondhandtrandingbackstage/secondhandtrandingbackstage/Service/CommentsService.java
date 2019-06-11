@@ -9,5 +9,5 @@ import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Comments;
 public interface CommentsService {
 	Comments findCommentsById(Integer id);
     void saveComments(Comments comments);
-
+    Iterable<Comments> findAllByseller(String seller);
 }

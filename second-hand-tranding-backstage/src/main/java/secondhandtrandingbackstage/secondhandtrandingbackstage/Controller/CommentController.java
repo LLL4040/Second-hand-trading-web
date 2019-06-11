@@ -26,4 +26,10 @@ public class CommentController {
         commentsService.saveComments(c1);
         return "save comments";
     }
+    @GetMapping(path="/findAllByseller") // Map ONLY GET Requests
+    public @ResponseBody
+    Iterable<Comments> findcomment(@RequestParam String seller){
+
+        return commentsService.findAllByseller(seller);
+    }
 }

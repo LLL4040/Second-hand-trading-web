@@ -24,5 +24,9 @@ public class CommentsServiceimpl implements CommentsService {
     public void saveComments(Comments comments) {
     	commentsDao.Save(comments);
     }
+    @Override
+    public Iterable<Comments> findAllByseller(String seller){
+        return commentsDao.findAllByseller(seller);
+    }
 
 }

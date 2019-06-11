@@ -11,15 +11,21 @@ import java.io.Serializable;
 public class Collect implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @Column(name = "collect_id")
+    private String collect_id;
     @Column(name = "username")
     private String username;
     @Column(name = "goods_id")
     private int goods_id;
 
 
+    public String getCollect_id() {
+        return collect_id;
+    }
 
-
-
+    public void setCollect_id(String collect_id) {
+        this.collect_id = collect_id;
+    }
 
     public String getUserame() {
         return username;

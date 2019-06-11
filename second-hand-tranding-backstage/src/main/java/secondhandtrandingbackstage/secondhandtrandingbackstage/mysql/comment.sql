@@ -1,1 +1,12 @@
-INSERT INTO `comments` (`comment_id`,username,seller,comment,comments_id) VALUES (11,5,1,'商家好sdvfvfd赞赞赞赞赞赞',0);
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (1,5,1,'商家好sdvfvfd赞赞赞赞赞赞');
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (2,2,1,'商家好sdvfvfd赞赞赞赞赞赞');
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (3,3,1,'商家好sdvfvfd赞赞赞赞赞赞');
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (4,5,2,'商家好sdvfvfd赞赞赞赞赞赞');
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (5,2,2,'商家好sdvfvfd赞赞赞赞赞赞');
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (6,3,2,'商家好sdvfvfd赞赞赞赞赞赞');
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (7,5,3,'商家好sdvfvfd赞赞赞赞赞赞');
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (8,2,3,'商家好sdvfvfd赞赞赞赞赞赞');
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (9,3,3,'商家好sdvfvfd赞赞赞赞赞赞');
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (10,5,4,'商家好sdvfvfd赞赞赞赞赞赞');
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (11,2,4,'商家好sdvfvfd赞赞赞赞赞赞');
+INSERT INTO `comments` (`comment_id`,username,seller,comment) VALUES (12,3,4,'商家好sdvfvfd赞赞赞赞赞赞');

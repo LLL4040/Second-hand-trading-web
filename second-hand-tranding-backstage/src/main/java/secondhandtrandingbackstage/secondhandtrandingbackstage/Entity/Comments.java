@@ -11,8 +11,8 @@ import java.io.Serializable;
 public class Comments implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "comments_id")
-    private int comments_id;
+    @Column(name = "comment_id")
+    private int comment_id;
     @Column(name = "username")
     private String username;
     @Column(name = "seller")
@@ -33,10 +33,10 @@ public class Comments implements Serializable {
         this.seller = seller;
     }
     public int getComments_id() {
-        return comments_id;
+        return comment_id;
     }
     public void setComments_id(int comments_id) {
-        this.comments_id = comments_id;
+        this.comment_id = comments_id;
     }
     public String getComment() {
         return comment;
@@ -44,9 +44,9 @@ public class Comments implements Serializable {
     public void setComment(String comment) {
         this.comment = comment;
     }
-    public Comments(int comments_id, String username, String seller,String comment) {
+    public Comments(int comment_id, String username, String seller,String comment) {
         super();
-        this.comments_id = comments_id;
+        this.comment_id = comment_id;
         this.username = username;
         this.seller = seller;
         this.comment = comment;

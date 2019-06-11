@@ -44,7 +44,7 @@ public class UsersServiceimpl implements UsersService {
         else{
             loginsuccess=0;
         };
-        jsonobj.put("name" , useritem.getUserame());
+        jsonobj.put("name" , useritem.getUsername());
         jsonobj.put("phone", useritem.getPhone_number());
         jsonobj.put("email", useritem.getEmail());
 

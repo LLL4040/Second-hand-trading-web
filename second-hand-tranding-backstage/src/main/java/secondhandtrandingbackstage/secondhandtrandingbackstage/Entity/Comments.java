@@ -20,7 +20,7 @@ public class Comments implements Serializable {
     @Column(name = "comment")
     private String comment;
 
-    public String getUserame() {
+    public String getUsername() {
         return username;
     }
     public void setUsername(String username) {

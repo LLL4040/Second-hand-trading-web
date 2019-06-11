@@ -543,7 +543,7 @@
                         for(var i=0;i<response.data.length;i++){
                             var objproject = {
                                 "comment_id" : response.data[i].comment_id,
-                                "username" : response.data[i].userame,
+                                "username" : response.data[i].username,
                                 "seller" : response.data[i].seller,
                                 "comment" : response.data[i].comment,
                                 //"comments_id" :response.data[i].comments_id,

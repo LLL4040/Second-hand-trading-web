@@ -50,7 +50,7 @@ public class CollectServiceimpl implements CollectService {
         Collect rs=new Collect();
         while(iter.hasNext()){  //执行过程中会执行数据锁定，性能稍差，若在循环过程中要去掉某个元素只能调用iter.remove()方法。
             rs = iter.next();
-            jsonobj.put("username" , rs.getUserame());
+            jsonobj.put("username" , rs.getUsername());
             jsonobj.put("goods_id" , rs.getGoods_id());
             jsonarray.add(jsonobj);
         }

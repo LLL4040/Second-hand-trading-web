@@ -27,7 +27,7 @@ public class Collect implements Serializable {
         this.collect_id = collect_id;
     }
 
-    public String getUserame() {
+    public String getUsername() {
         return username;
     }
     public void setUsername(String username) {

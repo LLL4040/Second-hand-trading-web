@@ -24,7 +24,7 @@ public class Users implements Serializable{
 
 
 
-	public String getUserame() {
+	public String getUsername() {
 		return username;
 	}
 	public void setUsername(String username) {

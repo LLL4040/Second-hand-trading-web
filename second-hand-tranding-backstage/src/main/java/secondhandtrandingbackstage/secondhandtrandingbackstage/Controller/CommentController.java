@@ -33,7 +33,7 @@ public class CommentController {
     public @ResponseBody
     Iterable<Comments> findcomment(@RequestParam String seller){
 
-        return commentsRepository.findAllByseller(seller);
-        //return commentsService.findAllByseller(seller);
+        //return commentsRepository.findAllByseller(seller);
+        return commentsService.findAllByseller(seller);
     }
 }

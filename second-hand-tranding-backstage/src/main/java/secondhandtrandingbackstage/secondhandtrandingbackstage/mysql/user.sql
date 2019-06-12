@@ -1,10 +1,1 @@
-INSERT INTO `users` (`username`,`password`,`email`,`phone_number`) VALUES (1,1,'1070dsd@qq.com','80086');
-INSERT INTO `users` (`username`,`password`,`email`,`phone_number`) VALUES (2,1,'1070dsd@qq.com','84086');
-INSERT INTO `users` (`username`,`password`,`email`,`phone_number`) VALUES (3,1,'1070dsd@qq.com','84086');
-INSERT INTO `users` (`username`,`password`,`email`,`phone_number`) VALUES (4,1,'1070dsd@qq.com','80544086');
-INSERT INTO `users` (`username`,`password`,`email`,`phone_number`) VALUES (5,1,'1070dsd@qq.com','80440e86');
-INSERT INTO `users` (`username`,`password`,`email`,`phone_number`) VALUES (6,1,'1070dsd@qq.com','80440f86');
-INSERT INTO `users` (`username`,`password`,`email`,`phone_number`) VALUES (7,1,'1070dsd@qq.com','80440f86');
-INSERT INTO `users` (`username`,`password`,`email`,`phone_number`) VALUES (8,1,'1070dsd@qq.com','80440f86');
-INSERT INTO `users` (`username`,`password`,`email`,`phone_number`) VALUES (9,1,'1070dsd@qq.com','80440f86');
-INSERT INTO `users` (`username`,`password`,`email`,`phone_number`) VALUES (10,1,'1070dsd@qq.com','8044f086');
+INSERT INTO `users` (`username`,`password`,`email`,`phone_number`) VALUES (3,1,'1070dsd@qq.com','8044086');

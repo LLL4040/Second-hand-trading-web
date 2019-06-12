@@ -7,12 +7,12 @@ import java.util.List;
 
 public interface CollectDao {
 
-	boolean Exists(String id);
+	boolean Exists(int id);
 	void Save(Collect collect);
-	Collect findone(String id);
-	void Delete(String id);
+	Collect findOne(int id);
+	void Delete(int id);
 	void Update();
-	List<Collect> findmycollect(String id);
+	List<Collect>findmycollect(String id);
 
 
 }

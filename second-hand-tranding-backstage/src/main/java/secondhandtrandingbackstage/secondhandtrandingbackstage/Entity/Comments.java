@@ -32,11 +32,11 @@ public class Comments implements Serializable {
     public void setSeller(String seller) {
         this.seller = seller;
     }
-    public int getComments_id() {
+    public int getComment_id() {
         return comment_id;
     }
-    public void setComments_id(int comments_id) {
-        this.comment_id = comments_id;
+    public void setComment_id(int comment_id) {
+        this.comment_id = comment_id;
     }
     public String getComment() {
         return comment;

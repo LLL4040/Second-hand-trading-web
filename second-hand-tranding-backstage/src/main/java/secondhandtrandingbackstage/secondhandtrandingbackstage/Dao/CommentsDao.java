@@ -13,9 +13,10 @@ public interface CommentsDao {
 
 	boolean Exists(Integer id);
 	void Save(Comments comment);
-	Comments findone(Integer id);
+	Comments findOne(Integer id);
 	void Delete(Integer id);
 	void Update();
 	Iterable<Comments> findAllByseller(String seller);
+
 
 }

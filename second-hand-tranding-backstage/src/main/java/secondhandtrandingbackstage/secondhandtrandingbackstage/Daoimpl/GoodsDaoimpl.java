@@ -9,39 +9,39 @@ import secondhandtrandingbackstage.secondhandtrandingbackstage.Repository.GoodsR
 
 @Repository
 public  class GoodsDaoimpl implements GoodsDao {
-	 @Autowired
-     private GoodsRepository goodsRepository;
+    @Autowired
+    private GoodsRepository goodsRepository;
 
-	 @Override
-     public Goods findone(int id) {
-         return goodsRepository.findGoodsById(id);
-     }
-	 @Override
-	 public boolean Exists(int id) {
-		 return goodsRepository.existsById(id);
-	 }
-	 @Override
-	 public void Save(Goods car) {
-		 goodsRepository.save(car);
-	 }
-	 @Override
-	 public void Delete(int id) {
-		 goodsRepository.deleteById(id);
-	 }
-	 @Override
-	 public void Update() {
-		 goodsRepository.flush();
-	 }
-	 @Override
-	public Iterable<Goods> getAllGoods(){
-	 	return goodsRepository.findAll();
-	 }
-	@Override
-	public String delectGoodsById(int Good_id){
-	 	Goods g1 =goodsRepository.getOne(Good_id);
-		goodsRepository.delete(g1);
-		return "delete goods success";
-	}
+    @Override
+    public Goods findone(int id) {
+        return goodsRepository.findGoodsById(id);
+    }
+    @Override
+    public boolean Exists(int id) {
+        return goodsRepository.existsById(id);
+    }
+    @Override
+    public void Save(Goods car) {
+        goodsRepository.save(car);
+    }
+    @Override
+    public void Delete(int id) {
+        goodsRepository.deleteById(id);
+    }
+    @Override
+    public void Update() {
+        goodsRepository.flush();
+    }
+    @Override
+    public Iterable<Goods> getAllGoods(){
+        return goodsRepository.findAll();
+    }
+    @Override
+    public String deleteGoodsById(int Good_id){
+        Goods good =goodsRepository.getOne(Good_id);
+        goodsRepository.delete(good);
+        return "delete goods success";
+    }
 
 }
 

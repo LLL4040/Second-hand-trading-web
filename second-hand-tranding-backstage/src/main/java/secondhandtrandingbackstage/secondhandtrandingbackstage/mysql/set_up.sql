@@ -40,10 +40,8 @@ CREATE TABLE comments (
 )  ENGINE=INNODB DEFAULT CHARSET=UTF8MB4;
 
 CREATE TABLE follow (
-                        `follow_id` INT UNSIGNED AUTO_INCREMENT,
                         `username` VARCHAR(50) NOT NULL,
                         `seller` VARCHAR(50) NOT NULL,
-                        PRIMARY KEY (`follow_id`),
                         FOREIGN KEY (`username`)
                             REFERENCES users (`username`)
                             ON DELETE CASCADE ON UPDATE CASCADE,
@@ -53,10 +51,8 @@ CREATE TABLE follow (
 )  ENGINE=INNODB DEFAULT CHARSET=UTF8MB4;
 
 CREATE TABLE collect (
-                         `collect_id` INT UNSIGNED AUTO_INCREMENT,
                          `username` VARCHAR(50) NOT NULL,
                          `goods_id` INT UNSIGNED NOT NULL,
-                         PRIMARY KEY (`collect_id`),
                          FOREIGN KEY (`username`)
                              REFERENCES users (`username`)
                              ON DELETE CASCADE ON UPDATE CASCADE,

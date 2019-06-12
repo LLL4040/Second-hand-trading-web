@@ -32,7 +32,7 @@ public class GoodsServiceimpl implements GoodsService {
     }
     @Override
     public String delectGoodsById(int Good_id){
-        return goodsDao.delectGoodsById(Good_id);
+        return goodsDao.deleteGoodsById(Good_id);
     }
 }
 

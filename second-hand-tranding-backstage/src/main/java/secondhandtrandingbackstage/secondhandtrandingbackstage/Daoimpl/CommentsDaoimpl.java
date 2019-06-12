@@ -12,7 +12,7 @@ public  class CommentsDaoimpl implements CommentsDao {
 	 @Autowired
      private CommentsRepository commentsRepository;
 	 @Override
-     public Comments findone(Integer id) {
+     public Comments findOne(Integer id) {
          return  commentsRepository.getOne(id);
      }
 	 @Override
@@ -31,9 +31,9 @@ public  class CommentsDaoimpl implements CommentsDao {
 	 public void Update() {
 		 commentsRepository.flush();
 	 }
-	 @Override
-	 public Iterable<Comments> findAllByseller(String seller){
-	 	return commentsRepository.findAllByseller(seller);
-	 }
+	@Override
+	public Iterable<Comments> findAllByseller(String seller){
+		return commentsRepository.findAllByseller(seller);
+	}
 }
 

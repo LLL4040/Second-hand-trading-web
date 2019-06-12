@@ -1,33 +1,38 @@
 package secondhandtrandingbackstage.secondhandtrandingbackstage.Entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "collect")
 public class Collect implements Serializable {
     private static final long serialVersionUID = 1L;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Id
     @Column(name = "collect_id")
-    private String collect_id;
+    @JsonBackReference
+    @JsonManagedReference
+    private Integer collect_id;
+
     @Column(name = "username")
     private String username;
     @Column(name = "goods_id")
     private int goods_id;
 
 
-    public String getCollect_id() {
+
+
+
+    public int getCollect_id() {
         return collect_id;
     }
-
-    public void setCollect_id(String collect_id) {
+    public void setCollect_id(int collect_id) {
         this.collect_id = collect_id;
     }
-
-    public String getUsername() {
+    public String getUserame() {
         return username;
     }
     public void setUsername(String username) {
@@ -40,9 +45,9 @@ public class Collect implements Serializable {
         this.goods_id = goods_id;
     }
 
-    public Collect(String username, int goods_id) {
+    public Collect(int collect_id,String username, int goods_id) {
         super();
-
+        this.collect_id=collect_id;
         this.username = username;
         this.goods_id = goods_id;
 

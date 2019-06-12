@@ -7,9 +7,7 @@ import secondhandtrandingbackstage.secondhandtrandingbackstage.Dao.CommentsDao;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Comments;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Service.CommentsService;
 
-/**
- * Created by chenhaopeng on 2019/5/2.
- */
+
 @Service
 public class CommentsServiceimpl implements CommentsService {
 
@@ -18,7 +16,7 @@ public class CommentsServiceimpl implements CommentsService {
 
     @Override
     public Comments findCommentsById(Integer id){
-        return  commentsDao.findone(id);
+        return  commentsDao.findOne(id);
     }
     @Override
     public void saveComments(Comments comments) {
@@ -28,5 +26,4 @@ public class CommentsServiceimpl implements CommentsService {
     public Iterable<Comments> findAllByseller(String seller){
         return commentsDao.findAllByseller(seller);
     }
-
 }

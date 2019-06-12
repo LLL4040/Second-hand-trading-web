@@ -1,9 +1,1 @@
-INSERT INTO `goods` (`goods_id`,`contact`,`cover`,`detail`,`status`,`title`,`username`) VALUES (1,8008666,87687,'衣服111',1,'衣服',1);
-INSERT INTO `goods` (`goods_id`,`contact`,`cover`,`detail`,`status`,`title`,`username`) VALUES (2,8008666,87687,'衣服222',1,'衣服',2);
-INSERT INTO `goods` (`goods_id`,`contact`,`cover`,`detail`,`status`,`title`,`username`) VALUES (3,8008666,87687,'衣服333',1,'衣服',3);
-INSERT INTO `goods` (`goods_id`,`contact`,`cover`,`detail`,`status`,`title`,`username`) VALUES (4,8008666,87687,'衣服444',1,'衣服',4);
-INSERT INTO `goods` (`goods_id`,`contact`,`cover`,`detail`,`status`,`title`,`username`) VALUES (5,8008666,87687,'衣服555',1,'衣服',5);
-INSERT INTO `goods` (`goods_id`,`contact`,`cover`,`detail`,`status`,`title`,`username`) VALUES (6,8008666,87687,'衣服666',1,'衣服',6);
-INSERT INTO `goods` (`goods_id`,`contact`,`cover`,`detail`,`status`,`title`,`username`) VALUES (7,8008666,87687,'衣服777',1,'衣服',7);
-INSERT INTO `goods` (`goods_id`,`contact`,`cover`,`detail`,`status`,`title`,`username`) VALUES (8,8008666,87687,'衣服888',1,'衣服',8);
-INSERT INTO `goods` (`goods_id`,`contact`,`cover`,`detail`,`status`,`title`,`username`) VALUES (9,8008666,87687,'衣服999',1,'衣服',9);
+INSERT INTO `goods` (`goods_id`,`contact`,`cover`,`detail`,`status`,`title`,`username`) VALUES (6,80086,8787,'衣服666',1,'衣服',1);

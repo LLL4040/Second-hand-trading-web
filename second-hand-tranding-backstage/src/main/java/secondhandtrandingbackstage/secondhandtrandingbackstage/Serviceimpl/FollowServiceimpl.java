@@ -20,6 +20,7 @@ public class FollowServiceimpl implements FollowService {
     public Follow findFollowById(String id){
         return followDao.findone(id);
     }
+    @Override
     public void saveFollow(Follow users) {
     	followDao.Save(users);
     }

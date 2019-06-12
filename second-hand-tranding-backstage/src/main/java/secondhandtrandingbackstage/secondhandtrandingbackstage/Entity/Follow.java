@@ -1,25 +1,33 @@
 package secondhandtrandingbackstage.secondhandtrandingbackstage.Entity;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "follow")
 public class Follow implements Serializable {
 	private static final long serialVersionUID = 1L;
-    @Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@Id
+	@Column(name = "follow_id")
+	@JsonBackReference
+	@JsonManagedReference
+	private Integer follow_id;
 	@Column(name = "username")
 	private String username;
 	@Column(name = "seller")
 	private String seller;
 
 
+	public Integer getFollow_id() {
+		return follow_id;
+	}
 
-
-
-
+	public void setFollow_id(Integer follow_id) {
+		this.follow_id = follow_id;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -35,7 +43,6 @@ public class Follow implements Serializable {
 
 	public Follow(String username, String seller) {
 		super();
-
 		this.username = username;
 		this.seller = seller;
 

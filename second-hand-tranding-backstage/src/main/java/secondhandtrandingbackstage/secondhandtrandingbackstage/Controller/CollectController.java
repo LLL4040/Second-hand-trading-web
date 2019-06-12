@@ -2,7 +2,7 @@ package secondhandtrandingbackstage.secondhandtrandingbackstage.Controller;
 
 
 
-import net.sf.json.JSONArray;
+import net.minidev.json.JSONArray;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

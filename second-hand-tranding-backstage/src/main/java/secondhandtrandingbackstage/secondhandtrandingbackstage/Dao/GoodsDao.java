@@ -10,6 +10,6 @@ public interface GoodsDao {
 	Goods findone(int id);
 	void Delete(int id);
 	void Update();
-	String delectGoodsById(int Good_id);
+	String deleteGoodsById(int Good_id);
 
 }

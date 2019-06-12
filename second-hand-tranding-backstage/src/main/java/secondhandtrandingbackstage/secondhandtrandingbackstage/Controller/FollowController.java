@@ -13,6 +13,7 @@ import secondhandtrandingbackstage.secondhandtrandingbackstage.Service.FollowSer
 public class FollowController {
     @Autowired
     private FollowService followService;
+
     @GetMapping(path="/saveFollow") // Map ONLY GET Requests
     public @ResponseBody
     String saveFollow (@RequestParam String username, @RequestParam String seller) {

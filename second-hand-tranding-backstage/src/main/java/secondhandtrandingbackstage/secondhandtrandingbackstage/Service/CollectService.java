@@ -1,16 +1,14 @@
 package secondhandtrandingbackstage.secondhandtrandingbackstage.Service;
 
 
-import net.sf.json.JSONArray;
+import net.minidev.json.JSONArray;
 import org.json.JSONException;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Collect;
 
-/**
- * Created by chenhaopeng on 2019/5/2.
- */
+
 public interface CollectService {
-    Collect findCollectById(String id);
+    Collect findCollectById(int id);
     void saveCollect(Collect collect);
-    void deleteCollectById(String id) ;
-    JSONArray mycollect(String username) throws JSONException;
+    void deleteCollectById(int id) ;
+    JSONArray mycollect(String username);
 }

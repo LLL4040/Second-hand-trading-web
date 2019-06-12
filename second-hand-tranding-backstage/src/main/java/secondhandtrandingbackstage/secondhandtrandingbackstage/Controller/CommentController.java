@@ -15,22 +15,21 @@ import javax.xml.stream.events.Comment;
 public class CommentController {
     @Autowired
     private CommentsService commentsService;
-    @GetMapping(path="/saveComments") // Map ONLY GET Requests
+
+    @GetMapping(path="/saveComments")
     public @ResponseBody
     String saveComments (@RequestParam String username,@RequestParam String seller,@RequestParam String comment) {
-
-        Comments c1=new Comments();
-        c1.setUsername(username);
-        c1.setSeller(seller);
-        c1.setComment(comment);
-        commentsService.saveComments(c1);
+        Comments comments = new Comments();
+        comments.setUsername(username);
+        comments.setSeller(seller);
+        comments.setComment(comment);
+        commentsService.saveComments(comments);
         return "save comments";
     }
 
-    @GetMapping(path="/findAllByseller") // Map ONLY GET Requests
+    @GetMapping(path="/findAllByseller")
     public @ResponseBody
-    Iterable<Comments> findcomment(@RequestParam String seller){
-        
+    Iterable<Comments> findComment(@RequestParam String seller){
         return commentsService.findAllByseller(seller);
     }
 }

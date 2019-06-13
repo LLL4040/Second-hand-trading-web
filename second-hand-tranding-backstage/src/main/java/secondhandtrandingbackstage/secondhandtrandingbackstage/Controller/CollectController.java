@@ -5,13 +5,15 @@ package secondhandtrandingbackstage.secondhandtrandingbackstage.Controller;
 import net.minidev.json.JSONArray;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Service.CollectService;
 
+
+@Controller
 @RequestMapping(path="/my")
-@RestController
 public class CollectController {
     @Autowired
     CollectService collectservice;

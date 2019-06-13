@@ -55,7 +55,7 @@ public class UsersServiceimpl implements UsersService {
     }
 
     @Override
-    public JSONObject register(String username, String password, String email, int phone) throws JSONException {
+    public JSONObject register(String username, String password, String email, String phone) throws JSONException {
         int regsuccess=0;
         JSONObject jsonobj = new JSONObject();
         Users useritem=new Users();

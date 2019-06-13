@@ -25,7 +25,7 @@ public class UserController {
 
     @RequestMapping(value = "/register")
     @ResponseBody
-    public JSONObject register(String username,String password,String email,int phone) throws JSONException {
+    public JSONObject register(String username,String password,String email,String phone) throws JSONException {
         JSONObject jsonarray = new JSONObject();
         jsonarray=usersservice.register(username, password, email, phone);
         System.out.println(jsonarray);

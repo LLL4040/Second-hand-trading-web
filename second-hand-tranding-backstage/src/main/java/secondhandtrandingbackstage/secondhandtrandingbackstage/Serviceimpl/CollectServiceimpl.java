@@ -43,7 +43,7 @@ public class CollectServiceimpl implements CollectService {
         while(iter.hasNext()){
             rs = iter.next();
             JSONObject jsonobj = new JSONObject();
-            jsonobj.put("username" , rs.getUserame());
+            jsonobj.put("username" , rs.getUsername());
             jsonobj.put("goods_id" , rs.getGoods_id());
             jsonarray.add(jsonobj);
         }

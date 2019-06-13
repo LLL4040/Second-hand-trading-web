@@ -17,7 +17,7 @@ public class Users implements Serializable{
 	@Column(name = "email")
 	private String email;
 	@Column(name = "phone_number")
-	private long phone_number;
+	private String phone_number;
 
 
 
@@ -35,10 +35,10 @@ public class Users implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public long getPhone_number() {
+	public String getPhone_number() {
 		return phone_number;
 	}
-	public void setPhone(long phone_number) {
+	public void setPhone(String phone_number) {
 		this.phone_number = phone_number;
 	}
 	public String getPassword() {
@@ -47,7 +47,7 @@ public class Users implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Users(String username, String password, long phone_number,String email) {
+	public Users(String username, String password, String phone_number,String email) {
 		super();
 		this.password = password;
 		this.username = username;

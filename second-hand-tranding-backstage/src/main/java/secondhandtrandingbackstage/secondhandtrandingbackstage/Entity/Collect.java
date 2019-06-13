@@ -32,7 +32,7 @@ public class Collect implements Serializable {
     public void setCollect_id(int collect_id) {
         this.collect_id = collect_id;
     }
-    public String getUserame() {
+    public String getUsername() {
         return username;
     }
     public void setUsername(String username) {

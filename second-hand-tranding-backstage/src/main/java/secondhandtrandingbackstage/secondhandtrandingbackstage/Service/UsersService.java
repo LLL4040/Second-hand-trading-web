@@ -13,5 +13,5 @@ public interface UsersService {
     void saveUsers(Users users);
     void deleteUsersById(String id) ;
     JSONObject login(String username, String password) throws JSONException;
-    JSONObject register(String username, String password, String email, int phone) throws JSONException;
+    JSONObject register(String username, String password, String email, String phone) throws JSONException;
 }

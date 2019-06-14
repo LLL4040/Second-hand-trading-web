@@ -13,6 +13,11 @@ public  class UsersDaoimpl implements UsersDao {
      private UsersRepository usersRepository;
 
 	 @Override
+	 public void DeleteByUsername(String username){
+	 	usersRepository.deleteByUsername(username);
+	 }
+
+	 @Override
      public Users findone(String id) {
          return usersRepository.getOne(id);
      }

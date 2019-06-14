@@ -43,10 +43,16 @@ public class CollectServiceimpl implements CollectService {
         while(iter.hasNext()){
             rs = iter.next();
             JSONObject jsonobj = new JSONObject();
+            jsonobj.put("collect_id", rs.getGoods_id());
             jsonobj.put("username" , rs.getUsername());
             jsonobj.put("goods_id" , rs.getGoods_id());
             jsonarray.add(jsonobj);
         }
         return jsonarray;
+    }
+
+    @Override
+    public void deleteCollectByUsernameAndGoodsid(String username, Integer Goods_id){
+        collectDao.DeleteByUsernameAndGoodsid(username, Goods_id);
     }
 }

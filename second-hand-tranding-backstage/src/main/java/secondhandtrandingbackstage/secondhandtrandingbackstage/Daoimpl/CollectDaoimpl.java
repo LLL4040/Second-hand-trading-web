@@ -18,6 +18,16 @@ public  class CollectDaoimpl implements CollectDao {
 	public  Collect findOne(int id) {
 		return  collectRepository.getOne(id);
 	}
+
+	@Override
+	public void DeleteByUsernameAndGoodsid(String username, Integer goods_id){
+		try{
+			collectRepository.deleteByUsernameAndGoods_id(username,goods_id);
+		}catch (Exception e){
+			System.out.println("delete collect fail");
+		}
+
+	}
 	@Override
 	public boolean Exists(int id) {
 		return  collectRepository.existsById(id);

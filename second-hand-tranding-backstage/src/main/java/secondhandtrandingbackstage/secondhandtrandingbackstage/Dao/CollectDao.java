@@ -12,6 +12,7 @@ public interface CollectDao {
 	Collect findOne(int id);
 	void Delete(int id);
 	void Update();
+	void DeleteByUsernameAndGoodsid(String username, Integer goods_id);
 	List<Collect>findmycollect(String id);
 
 

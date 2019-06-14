@@ -21,6 +21,11 @@ public class UsersServiceimpl implements UsersService {
     private UsersDao usersDao;
 
     @Override
+    public Users findUsersByUsername(String username){
+        return usersDao.findone(username);
+    }
+
+    @Override
     public Users findUsersById(String id){
         return usersDao.findone(id);
     }
@@ -52,6 +57,11 @@ public class UsersServiceimpl implements UsersService {
 
         jsonobj.put("loginsuccess" , loginsuccess);
         return jsonobj;
+    }
+
+    @Override
+    public void deleteUserByUsername(String username){
+        usersDao.DeleteByUsername(username);
     }
 
     @Override

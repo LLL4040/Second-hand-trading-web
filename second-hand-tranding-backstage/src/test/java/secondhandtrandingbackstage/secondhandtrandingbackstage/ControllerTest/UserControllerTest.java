@@ -1,4 +1,4 @@
-package secondhandtrandingbackstage.secondhandtrandingbackstage.Controller;
+package secondhandtrandingbackstage.secondhandtrandingbackstage.ControllerTest;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

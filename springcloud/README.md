@@ -1,32 +1,32 @@
 # User guidline
 
-## ·½·¨1£ºÔÚIntelliJ IDEAÖĞÊ¹ÓÃtomcatÔËĞĞ
+## ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½IntelliJ IDEAï¿½ï¿½Ê¹ï¿½ï¿½tomcatï¿½ï¿½ï¿½ï¿½
 
 * step1: 
-    ½«³ıÁË`eurekaserver`Ö®ÍâµÄÃ¿Ò»¸ö·şÎñµÄ`application.yml`ÅäÖÃÎÄ¼şÖĞ`defaultZone`µÄURL¸ÄÎª`http://localhost:9000/eureka/`
+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`Eureka`Ö®ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`application.yml`ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½`defaultZone`ï¿½ï¿½URLï¿½ï¿½Îª`http://localhost:9000/eureka/`
 * step2: 
-    µã»÷ÂÌÈı½ÇÔËĞĞËùÓĞµÄ·şÎñ
+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ĞµÄ·ï¿½ï¿½ï¿½
 
-## ·½·¨2£ºÔÚdockerÈİÆ÷ÖĞÔËĞĞ
+## ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½dockerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 * step1: 
-    ½«³ıÁË`eurekaserver`Ö®ÍâµÄÃ¿Ò»¸ö·şÎñµÄ`application.yml`ÅäÖÃÎÄ¼şÖĞ`defaultZone`µÄURL¸ÄÎª`http://eureka-server:9000/eureka/`
+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`Eureka`Ö®ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`application.yml`ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½`defaultZone`ï¿½ï¿½URLï¿½ï¿½Îª`http://eureka-server:9000/eureka/`
 * step2: 
-    ÔÚcmdÖĞcdµ½¸÷¸ö·şÎñµÄÎÄ¼şÄ¿Â¼ÏÂ·Ö±ğÔËĞĞ`mvn clean package -D maven.test.skip=true docker:build`´´½¨¶ÔÓ¦µÄdocker image
+    ï¿½ï¿½cmdï¿½ï¿½cdï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Ä¿Â¼ï¿½Â·Ö±ï¿½ï¿½ï¿½ï¿½ï¿½`mvn clean package -D maven.test.skip=true docker:build`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½docker image
 * step3: 
-    ÔÚdocker shellÀïÃæÒÀ´ÎÊäÈëÒÔÏÂÃüÁî
+    ï¿½ï¿½docker shellï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ```bash
 $ docker network create -d bridge cloud
-$ docker run -p 9000:9000 -idt --name eureka-server --network cloud lyl4040/eurekaserver
+$ docker run -p 9000:9000 -idt --name eureka-server --network cloud lyl4040/Eureka
 $ docker run -p 9001:9001 -idt --name provider --network cloud lyl4040/servicedemo
 $ docker run -p 9002:9002 -idt --name consumer --network cloud lyl4040/servicehi
 ```
 
-## ·ÃÎÊ
+## ï¿½ï¿½ï¿½ï¿½
 
-* ÊäÈë http://localhost:9000 ·ÃÎÊ×¢²áÖĞĞÄ
-* ÊäÈë http://localhost:9001/demo?name=233 ·ÃÎÊÉú²úÕß¶Ë(²ÎÊı×ÔÄâ)
-* ÊäÈë http://localhost:9002/hi?name=233 ·ÃÎÊÏû·ÑÕß¶Ë(²ÎÊı×ÔÄâ)
-* Èç¹ûÉú²úÕß·şÎñÃ»ÓĞÔËĞĞ£¬·ÃÎÊÏû·ÑÕß¶Ë»áµ÷ÓÃ¶ÏÂ·Æ÷µÄfallback·µ»ØÌáÊ¾ĞÅÏ¢
-* Èç¹ûÊÇÔÚĞéÄâ»úÀïÔËĞĞdocker£¬ĞèÒª°Ñlocalhost»»³ÉdockerËŞÖ÷»úµÄip
+* ï¿½ï¿½ï¿½ï¿½ http://localhost:9000 ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+* ï¿½ï¿½ï¿½ï¿½ http://localhost:9001/demo?name=233 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+* ï¿½ï¿½ï¿½ï¿½ http://localhost:9002/hi?name=233 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß·ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ğ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¶Ë»ï¿½ï¿½ï¿½Ã¶ï¿½Â·ï¿½ï¿½ï¿½ï¿½fallbackï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ï¢
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½dockerï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½localhostï¿½ï¿½ï¿½ï¿½dockerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ip

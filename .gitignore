@@ -8,6 +8,7 @@
 bin
 build
 target
+second-hand-tranding-backstage/pom.xml
 dependency-reduced-pom.xml
 *.sublime-*
 /scratch

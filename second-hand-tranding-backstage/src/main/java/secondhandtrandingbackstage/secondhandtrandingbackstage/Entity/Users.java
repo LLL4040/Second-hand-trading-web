@@ -42,7 +42,7 @@ public class Users implements Serializable{
 		this.phone_number = phone_number;
 	}
 	public String getPassword() {
-		return password;
+		return this.password;
 	}
 	public void setPassword(String password) {
 		this.password = password;

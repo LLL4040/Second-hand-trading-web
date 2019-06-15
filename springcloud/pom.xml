@@ -24,6 +24,7 @@
         <module>servicedemo</module>
         <module>userserver</module>
         <module>goodserver</module>
+        <module>collectserver</module>
     </modules>
 
     <properties>

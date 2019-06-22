@@ -7,6 +7,8 @@ import secondhandtrandingbackstage.secondhandtrandingbackstage.Dao.CommentsDao;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Comments;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Service.CommentsService;
 
+import java.util.List;
+
 
 @Service
 public class CommentsServiceimpl implements CommentsService {
@@ -23,7 +25,7 @@ public class CommentsServiceimpl implements CommentsService {
     	commentsDao.Save(comments);
     }
     @Override
-    public Iterable<Comments> findAllByseller(String seller){
+    public List<Comments> findAllByseller(String seller){
         return commentsDao.findAllByseller(seller);
     }
 }

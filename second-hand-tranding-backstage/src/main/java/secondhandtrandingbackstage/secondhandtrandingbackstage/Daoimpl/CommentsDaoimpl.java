@@ -7,6 +7,8 @@ import secondhandtrandingbackstage.secondhandtrandingbackstage.Dao.CommentsDao;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Entity.Comments;
 import secondhandtrandingbackstage.secondhandtrandingbackstage.Repository.CommentsRepository;
 
+import java.util.List;
+
 @Repository
 public  class CommentsDaoimpl implements CommentsDao {
 	 @Autowired
@@ -32,7 +34,7 @@ public  class CommentsDaoimpl implements CommentsDao {
 		 commentsRepository.flush();
 	 }
 	@Override
-	public Iterable<Comments> findAllByseller(String seller){
+	public List<Comments> findAllByseller(String seller){
 		return commentsRepository.findAllByseller(seller);
 	}
 }

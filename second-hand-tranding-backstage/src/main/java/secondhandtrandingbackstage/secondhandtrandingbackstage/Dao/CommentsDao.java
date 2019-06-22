@@ -16,7 +16,7 @@ public interface CommentsDao {
 	Comments findOne(Integer id);
 	void Delete(Integer id);
 	void Update();
-	Iterable<Comments> findAllByseller(String seller);
+	List<Comments> findAllByseller(String seller);
 
 
 }

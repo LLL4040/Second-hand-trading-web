@@ -52,7 +52,7 @@
             <div id="darkbannerwrap"></div>
 
             <form>
-                <input name="username" placeholder="用户名"  type="text" v-model="username">
+                <input name="username" placeholder="用户名"  type="text1" v-model="username">
                 <hr class="hr15">
                 <input name="password" placeholder="密码"  type="password" v-model="password">
                 <hr class="hr15">
@@ -144,6 +144,21 @@
             </div>
         </div>
 
+        <div class="footer_bg1">
+            <div class="wrap">
+                <div class="footer">
+                    <!-- scroll_top_btn -->
+
+                    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+                    <!--end scroll_top_btn -->
+                    <div class="copy">
+                        <p class="link">Copyright &copy; 2014.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> -  More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
         </body>
 
 </template>
@@ -198,7 +213,7 @@
         position: relative;
     }
 
-    input[type=text],
+    input[type=text1],
     input[type=file],
     input[type=password],
     input[type=email], select {
@@ -212,7 +227,7 @@
         outline:none;
         width:100%;
     }
-    input[type=text]:focus,
+    input[type=text1]:focus,
     input[type=file]:focus,
     input[type=password]:focus,
     input[type=email]:focus, select:focus {

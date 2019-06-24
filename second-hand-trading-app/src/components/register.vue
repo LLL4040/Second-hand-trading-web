@@ -1,5 +1,6 @@
 
 <template>
+    <body>
     <div class="body">
         <div class="main">
             <!-----start-main---->
@@ -13,14 +14,14 @@
             <h2>Or sign up with</h2>
             <form>
                 <div class="lable">
-                    <input type="text" class="text" v-model="form.username" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'UserName';}" id="active">
+                    <input type="text" class="text" v-model="form.username" placeholder="First Name"  >
 
-                    <input type="text" class="text" v-model="form.phone" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}">
+                    <input type="text" class="text" v-model="form.phone" placeholder="Last Name" >
                 </div>
                 <div class="clear"> </div>
                 <div class="lable-2">
-                    <input type="text" class="text" v-model="form.email" value="your@email.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'your@email.com ';}">
-                    <input type="password" class="text" v-model="form.password"  value="Password " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password ';}">
+                    <input type="text" class="text" v-model="form.email" placeholder="your@email.com "  >
+                    <input type="password" class="text" v-model="form.password"  placeholder="Password "  >
                 </div>
                 <div class="clear"> </div>
                 <h3>By creating an account, you agree to our <span><a href="#">Terms & Conditions</a> </span></h3>
@@ -35,6 +36,7 @@
         </div>
 
     </div>
+    </body>
 </template>
 <style scoped>
     /*@import "../mycss/register.css";*/

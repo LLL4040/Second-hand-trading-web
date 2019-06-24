@@ -27,10 +27,25 @@ public class CollectServiceImpl implements CollectService {
     public Collect findCollectById(int id) {
         return collectDao.findOne(id);
     }
+
     @Override
-    public void saveCollect(Collect users) {
-        collectDao.Save(users);
+    public boolean saveCollect(String username, Integer goods_id) {
+        try {
+            try{
+                Collect collect = collectDao.findByUsernameAndGoods_id(username, goods_id);
+                if(collect.getUsername().equals(username)){
+                    return false;
+                }
+            }catch (Exception e) {
+            }
+            Collect collect = new Collect(username, goods_id);
+            collectDao.Save(collect);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
+
     @Override
     public void deleteCollectById(int id) {
         collectDao.Delete(id);
@@ -63,7 +78,13 @@ public class CollectServiceImpl implements CollectService {
     }
 
     @Override
-    public void deleteCollectByUsernameAndGoodsid(String username, Integer Goods_id){
-        collectDao.DeleteByUsernameAndGoodsid(username, Goods_id);
+    public boolean deleteCollectByUsernameAndGoodsid(String username, Integer Goods_id){
+        try{
+            collectDao.DeleteByUsernameAndGoodsid(username, Goods_id);
+            return true;
+        }catch (Exception e) {
+            return false;
+        }
+
     }
 }

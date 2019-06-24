@@ -7,7 +7,6 @@ import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Objects;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {
@@ -32,7 +31,6 @@ public class GoodsServiceImpl implements GoodsService {
     }
     @Override
     public Integer saveGoods(Goods goods) {
-        if(Objects.equals(goods.getTitle(),"") || Objects.equals(goods.getUsername(), "")){ return -1; }
         return goodsDao.Save(goods);
     }
 

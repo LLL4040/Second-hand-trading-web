@@ -48,4 +48,8 @@ public class CollectDaoImpl implements CollectDao {
         return collectRepository.findmyCollect(username);
     }
 
+    @Override
+    public Collect findByUsernameAndGoods_id(String username, Integer goods_id) {
+        return collectRepository.findByUsernameAndGoods_id(username, goods_id);
+    }
 }

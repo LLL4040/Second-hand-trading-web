@@ -21,8 +21,6 @@ public class GoodsController {
     public Integer saveGoods (@RequestParam MultipartFile cover, @RequestParam String title,
                              @RequestParam String detail, @RequestParam String contact,
                              @RequestParam String username, @RequestParam int status) throws IOException {
-
-        if(Objects.equals(title,"") || Objects.equals(username, "")){ return -1; }
         Goods g1=new Goods(cover.getBytes(),title,detail,username,contact,status);
         return goodsService.saveGoods(g1);
     }

@@ -5,20 +5,30 @@ import Collect.Service.CollectService;
 import net.minidev.json.JSONArray;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path="/my")
+@RequestMapping("/my")
 public class CollectController {
     @Autowired
     private CollectService collectservice;
 
-    @RequestMapping(value = "/collect")
+    @RequestMapping("/collect")
     @ResponseBody
-    public JSONArray mycollect(String username) {
+    public JSONArray myCollect(String username) {
         return collectservice.mycollect(username);
+    }
+
+    @PostMapping("/addCollect")
+    @ResponseBody
+    public boolean addOne(@RequestParam String username, @RequestParam Integer goods_id) {
+        return collectservice.saveCollect(username, goods_id);
+    }
+
+    @PostMapping("/deleteCollect")
+    @ResponseBody
+    public boolean deleteOne(@RequestParam String username, @RequestParam Integer goods_id) {
+        return collectservice.deleteCollectByUsernameAndGoodsid(username, goods_id);
     }
 
 }

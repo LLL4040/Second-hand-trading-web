@@ -1,4 +1,4 @@
-package Follow;
+package Comments;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableEurekaClient
 @RestController
-public class FollowServerApplication {
+public class CommentServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FollowServerApplication.class, args);
+        SpringApplication.run(CommentServerApplication.class, args);
     }
 }

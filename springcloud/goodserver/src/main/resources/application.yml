@@ -1,7 +1,7 @@
 # application name
 spring:
   application:
-    name: good-server
+    name: goods-server
   # Mysql jpa config
   datasource:
     url: jdbc:Mysql://localhost:3306/second_hand?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8

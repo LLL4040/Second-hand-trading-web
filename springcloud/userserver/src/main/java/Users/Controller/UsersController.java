@@ -24,4 +24,15 @@ public class UsersController {
     public JSONObject register(String username,String password,String email,String phone) throws JSONException {
         return usersservice.register(username, password, email, phone);
     }
+
+    @RequestMapping(value = "/find")
+    @ResponseBody
+    public boolean findByName(String username) {
+        try {
+            usersservice.findUsersById(username);
+            return true;
+        }catch (Exception e) {
+            return false;
+        }
+    }
 }

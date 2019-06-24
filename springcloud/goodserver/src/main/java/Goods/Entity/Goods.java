@@ -1,9 +1,6 @@
 package Goods.Entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -11,6 +8,7 @@ import java.io.Serializable;
 public class Goods implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "goods_id")
     private int goods_id;
     @Column(name = "cover")

@@ -25,6 +25,9 @@
         <module>userserver</module>
         <module>goodserver</module>
         <module>collectserver</module>
+        <module>followserver</module>
+        <module>commentserver</module>
+        <module>gateway</module>
     </modules>
 
     <properties>

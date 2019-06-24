@@ -20,8 +20,8 @@ public  class GoodsDaoImpl implements GoodsDao {
         return goodsRepository.existsById(id);
     }
     @Override
-    public void Save(Goods goods) {
-        goodsRepository.save(goods);
+    public Integer Save(Goods goods) {
+        return goodsRepository.save(goods).getGoods_id();
     }
     @Override
     public void Delete(int id) {

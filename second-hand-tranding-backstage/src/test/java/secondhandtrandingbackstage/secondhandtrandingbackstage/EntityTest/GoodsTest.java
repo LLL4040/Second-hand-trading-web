@@ -26,13 +26,7 @@ public class GoodsTest {
         Assert.assertEquals("get goods_id fail",3,goods.getGoods_id());
         goods.setGoods_id(2);
     }
-//    @Test
-//    public void CoverTest(){
-//        Assert.assertEquals("get cover fail",0,goods.getCover());
-//        //goods.setCover(new byte[2048]);
-//        Assert.assertEquals("get cover fail",0,goods.getCover());
-//        //goods.setCover(new byte[1024]);
-//    }
+
     @Test
     public void titleTest(){
         Assert.assertEquals("get title fail","衣服",goods.getTitle());

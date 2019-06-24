@@ -13,9 +13,9 @@ public class UsersTest {
     private Users users=new Users("usertest","password","phone","Email");
     @Test
     public void UsernameTest(){
-        Assert.assertEquals("UsernameTset fails", "usertest",users.getUsername());
+        Assert.assertEquals("UsernameTest fails", "usertest",users.getUsername());
         users.setUsername("username");
-        Assert.assertEquals("UsernameTset fails", "username",users.getUsername());
+        Assert.assertEquals("UsernameTest fails", "username",users.getUsername());
         users.setUsername("usertest");
     }
     @Test

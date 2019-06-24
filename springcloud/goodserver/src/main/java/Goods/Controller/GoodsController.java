@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Objects;
 
 @RequestMapping(path="/goods")
 @RestController
@@ -16,13 +17,13 @@ public class GoodsController {
 
     @PostMapping(path="/saveGoods")
     @ResponseBody
-    public String saveGoods (@RequestParam MultipartFile cover, @RequestParam String title,
+    public Integer saveGoods (@RequestParam MultipartFile cover, @RequestParam String title,
                              @RequestParam String detail, @RequestParam String contact,
                              @RequestParam String username, @RequestParam int status) throws IOException {
 
+        if(Objects.equals(title,"") || Objects.equals(username, "")){ return -1; }
         Goods g1=new Goods(cover.getBytes(),title,detail,username,contact,status);
-        goodsService.saveGoods(g1);
-        return "ok";
+        return goodsService.saveGoods(g1);
     }
     @GetMapping(path="/findGoodsById")//根据物品的id来找物品
     public @ResponseBody Goods findGoodsById(@RequestParam int goods_id) {

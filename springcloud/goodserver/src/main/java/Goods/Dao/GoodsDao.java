@@ -5,7 +5,7 @@ import Goods.Entity.Goods;
 public interface GoodsDao {
     Iterable<Goods> getAllGoods();
     boolean Exists(int id);
-    void Save(Goods goods);
+    Integer Save(Goods goods);
     Goods findone(int id);
     void Delete(int id);
     void Update();

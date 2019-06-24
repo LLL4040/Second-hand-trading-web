@@ -20,8 +20,6 @@
     <modules>
         <module>configserver</module>
         <module>eurekaserver</module>
-        <module>servicehi</module>
-        <module>servicedemo</module>
         <module>userserver</module>
         <module>goodserver</module>
         <module>collectserver</module>

@@ -56,7 +56,7 @@ module.exports = {
     devServer: {
         open: process.platform === '',
         host: '0.0.0.0',
-        port: 8080,
+        port: 8081,
         https: false,
         hotOnly: false,
         // proxy: {
@@ -73,7 +73,7 @@ module.exports = {
         //before: (app) => {},
         proxy: {
             '': {
-                target: 'http://localhost:8071',
+                target: 'http://localhost:8081/',
                 changeOrigin: true,
                 ws: true,
 

@@ -281,7 +281,7 @@
                 this.$router.push({ path: `/addGoods` });
             },
             loadGoods(){
-                this.$myAxios.get('/goods/getAllGoods')
+                this.$myAxios.get('http://localhost:9091/goods/getAllGoods')
                     .then((response)=> {
                         var that = this;
                         for(var i=0;i<response.data.length;i++){

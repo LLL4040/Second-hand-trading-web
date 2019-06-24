@@ -13,14 +13,15 @@ import axios from "axios"
 // Object.defineProperty(Vue.prototype, '$myAxios', {
 //   value: axios
 // })
-Vue.prototype.$myAxios= axios
+Vue.prototype.$myAxios= axios;
+
 import Global from './components/Global.vue'//引用文件
-Vue.prototype.GLOBAL = Global//挂载到Vue实例上面
+Vue.prototype.GLOBAL = Global;//挂载到Vue实例上面
 
 Vue.use(ElementUI);
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   router,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');

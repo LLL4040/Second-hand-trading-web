@@ -3,14 +3,13 @@ package Collect.ServiceImpl;
 import Collect.Dao.CollectDao;
 import Collect.Entity.Collect;
 import Collect.Service.CollectService;
-
+import Collect.Client;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.Iterator;
 import java.util.List;
@@ -21,7 +20,7 @@ public class CollectServiceImpl implements CollectService {
     @Autowired
     private CollectDao collectDao;
     @Autowired
-    private RestTemplate restTemplate;
+    private Client client;
 
     @Override
     public Collect findCollectById(int id) {
@@ -65,7 +64,7 @@ public class CollectServiceImpl implements CollectService {
             jsonobj.put("collect_id", rs.getGoods_id());
             jsonobj.put("username" , rs.getUsername());
             jsonobj.put("goods_id" , rs.getGoods_id());
-            JSONObject goods = restTemplate.getForObject("http://GOODS-SERVER/goods/findGoodsById?goods_id="+rs.getGoods_id(), JSONObject.class);
+            JSONObject goods = client.consumer(rs.getGoods_id());
             jsonobj.put("goods", goods);
             jsonArray.add(jsonobj);
         }

@@ -43,15 +43,12 @@
             </div>
         </div>
     </div>
-    <div id="top">
-        <h2>个人中心</h2>
-        <div class=jg></div>
-        <div id="topTags">
-            <ul>
-            </ul>
-        </div>
-    </div>
+    <div id="mcbiao">
+
     <div id="main">
+        <div id="top">
+            <h2>个人中心</h2>
+        </div>
         <div id="leftMenu">
             <ul>
                 <li @click="myinfo">个人信息</li>
@@ -76,6 +73,7 @@
 
         </div>
 </div>
+    </div>
         <!-- start footer -->
     <div class="footer_bg">
         <div class="wrap">
@@ -228,9 +226,7 @@
         text-align: center;
         width:904px;
         height:40px;
-        position: relative;
-        left:20.25%;
-        margin-top: 30px;
+
         margin-right: 0px;
         margin-bottom: 0;
         margin-left: 0px;
@@ -284,7 +280,7 @@
         background-color:#F5F7E6;
         margin-top: 0;
         margin-right: auto;
-        margin-bottom: 0;
+        margin-bottom: 40px;
         margin-left: auto;
     }
 
@@ -342,6 +338,9 @@
         background-color: #ffffff;
         font-size: 15px;
         color: #5e5e5e;
+    }
+    #mcbiao{
+        position: static;
     }
 
 

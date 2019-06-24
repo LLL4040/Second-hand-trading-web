@@ -54,26 +54,9 @@ module.exports = {
     pwa: {},
     // webpack-dev-server 相关配置
     devServer: {
-        open: process.platform === '',
-        host: '0.0.0.0',
-        port: 8081,
-        https: false,
-        hotOnly: false,
-        // proxy: {
-        //     // 设置代理
-        //     // proxy all requests starting with /api to jsonplaceholder
-        //     'http://localhost:8080/': {
-        //         target: 'http://baidu.com:8080', //真实请求的目标地址
-        //         changeOrigin: true,
-        //         pathRewrite: {
-        //             '^http://localhost:8080/': ''
-        //         }
-        //     }
-        // },
-        //before: (app) => {},
         proxy: {
             '': {
-                target: 'http://localhost:8081/',
+                target: 'http://localhost:9010/',
                 changeOrigin: true,
                 ws: true,
 

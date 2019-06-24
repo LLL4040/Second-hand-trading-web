@@ -6,6 +6,8 @@ import Goods.Repository.GoodsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public  class GoodsDaoImpl implements GoodsDao {
     @Autowired
@@ -41,6 +43,10 @@ public  class GoodsDaoImpl implements GoodsDao {
         good.setStatus(0);
         goodsRepository.save(good);
         return "delete goods success";
+    }
+    @Override
+    public List<Goods> getStatusGoods(Integer status){
+        return goodsRepository.findAllByStatus(status);
     }
 
 }

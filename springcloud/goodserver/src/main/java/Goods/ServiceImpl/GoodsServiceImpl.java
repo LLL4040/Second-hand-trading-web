@@ -7,6 +7,8 @@ import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 
 @Service
 public class GoodsServiceImpl implements GoodsService {
@@ -36,7 +38,11 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public Iterable<Goods> getAllGoods() {
-        return goodsDao.getAllGoods();
+        try{
+            return goodsDao.getStatusGoods(1);
+        }catch (Exception e){
+            return new ArrayList<>();
+        }
     }
     @Override
     public String deleteGoodsById(int Good_id){

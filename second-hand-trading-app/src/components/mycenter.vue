@@ -51,21 +51,22 @@
         </div>
         <div id="leftMenu">
             <ul>
-                <li @click="myinfo">个人信息</li>
-                <li @click="mycoll">我的收藏</li>
+                <li @click="myinfo()">个人信息</li>
+                <li @click="mycoll()">我的收藏</li>
 
             </ul>
         </div>
         <div class=jg></div>
 
         <div id="content">
-            <div class="info" v-if="myinformation"><p>用户名：</p>{{username}}</div>
-            <div class="info" v-if="myinformation"><p>电话：</p>{{phone}}</div>
-            <div class="info" v-if="myinformation"><p>邮箱：</p>{{email}}</div>
-            <div v-if="mycollect" class="info">
+            <div class="info" v-if="myinformation !== 'false'"><p>用户名：</p>{{username}}</div>
+            <div class="info" v-if="myinformation !== 'false'"><p>电话：</p>{{phone}}</div>
+            <div class="info" v-if="myinformation !== 'false'"><p>邮箱：</p>{{email}}</div>
+            <div v-if="mycollect !== 'false'" class="info">
                 <div>我的收藏</div>
                 <!--eslint-disable-next-line-->
                 <tr v-for="p in itemList">
+                    <td>{{p.goods_id}}</td>
                     <td color="#ff9955"><router-link :to="{name:'detail',params:{ id:p}}">{{"goods_id:    "+p.goods_id}}</router-link></td>
 
                 </tr>
@@ -146,9 +147,6 @@
 
                 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
                 <!--end scroll_top_btn -->
-                <div class="copy">
-                    <p class="link">Copyright &copy; 2014.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> -  More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
-                </div>
                 <div class="clear"></div>
             </div>
         </div>
@@ -163,8 +161,8 @@
         name: "mycenter",
         data(){
             return {
-                myinformation:true,
-                mycollect:false,
+                myinformation:'true',
+                mycollect:'false',
                 username:localStorage.getItem('username'),
                 phone:localStorage.getItem('phone'),
                 email:localStorage.getItem('email'),
@@ -173,16 +171,16 @@
         },
         methods: {
             /* 提交进行判断的函数 */
-            myinfo: function () {
-                this.mycollect=false;
-                this.myinformation=true;
+            myinfo() {
+                this.mycollect='false';
+                this.myinformation='true';
+                this.$forceUpdate();
             },
-            mycoll: function () {
-
-                this.myinformation=false;
-                this.mycollect=true;
-                const self = this
-                let url = '/my/collect'
+            mycoll() {
+                this.myinformation='false';
+                this.mycollect='true';
+                const self = this;
+                let url = 'collect-server/my/collect';
                 this.$myAxios.get(url,
                     {
                         params: {
@@ -190,10 +188,11 @@
                         }
                     })
                     .then(function (res) {
-                        var itemlist = res.data
-                        self.itemList = itemlist
-                        console.log(self.itemList)
-
+                        var itemlist = res.data;
+                        self.itemList = itemlist;
+                        console.log(self.itemList);
+                        console.log(typeof self.mycollect);
+                        self.$forceUpdate();
                     })
                     .catch(err => {
                         console.log(err)

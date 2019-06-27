@@ -163,6 +163,57 @@
 
 </template>
 
+<script>
+    export default {
+        name: 'register',
+        props: ['message'],
+        loginsuccess: 0,
+        data () {
+            return {
+
+                    username: '',
+                    password: ''
+
+            }
+        },
+        mounted () {
+            localStorage.clear();
+            localStorage.setItem('username', 'login');
+            localStorage.setItem('phone', 'null');
+            localStorage.setItem('email', 'null');
+        },
+        methods: {
+            /* 提交进行判断的函数 */
+            sub: function () {
+                const self = this;
+                let url = 'user-server/user/login';
+                this.$myAxios.get(url,
+                    {
+                        params: {
+                            username: this.username,
+                            password: this.password,
+                        }
+                    })
+                    .then(function (res) {
+                        var itemlist = res.data;
+                        self.itemList = itemlist;
+                        console.log(self.itemList);
+                        if (res.data.loginsuccess === 1) {
+                            alert('登陆成功');
+                            localStorage.setItem('username', res.data.name);
+                            localStorage.setItem('phone', res.data.phone);
+                            localStorage.setItem('email', res.data.email);
+                            this.$router.push({ path: `/` });
+                        }
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+            },
+        }
+    }
+</script>
+
 <style scoped>
     /*@import "../mycss/login.css";*/
     body,html{
@@ -300,55 +351,3 @@
         right:15px;
     }
 </style>
-<script>
-    export default {
-        name: 'register',
-        props: ['message'],
-        loginsuccess: 0,
-        data () {
-            return {
-
-                    username: '',
-                    password: ''
-
-            }
-        },
-        mounted () {
-            localStorage.clear()
-            localStorage.setItem('username', 'login')
-            localStorage.setItem('phone', 'null')
-            localStorage.setItem('email', 'null')
-        },
-        methods: {
-            /* 提交进行判断的函数 */
-            sub: function () {
-                const self = this
-                let url = '/my/login'
-                this.$myAxios.get(url,
-                    {
-                        params: {
-                            username: this.username,
-                            password: this.password,
-                        }
-                    })
-                    .then(function (res) {
-                        var itemlist = res.data
-                        self.itemList = itemlist
-                        console.log(self.itemList)
-                        if (res.data.loginsuccess === 1) {
-                            alert('登陆成功')
-                            localStorage.setItem('username', res.data.name)
-                            localStorage.setItem('phone', res.data.phone)
-                            localStorage.setItem('email', res.data.email)
-                            console.log(res.data)
-                            self.$router.push({ path: `/` })
-
-                        }
-                    })
-                    .catch(err => {
-                        console.log(err)
-                    })
-            },
-        }
-    }
-</script>

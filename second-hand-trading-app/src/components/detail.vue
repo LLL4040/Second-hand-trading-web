@@ -19,8 +19,8 @@
                     <ul class="icon1 sub-icon1">
                         <li><a class="active-icon c1" href="#" @click="addGoods"><i>addGoods</i></a>
                             <ul class="sub-icon1 list">
-                                <li><h3>shopping cart empty</h3><a href=""></a></li>
-                                <li><p>if items in your wishlit are missing, <a href="#l">contact us</a> to view them</p></li>
+                                <li><h3>发布新商品</h3><a href=""></a></li>
+                                <!--<li><p>if items in your wishlit are missing, <a href="#l">contact us</a> to view them</p></li>-->
                             </ul>
                         </li>
                     </ul>
@@ -83,10 +83,10 @@
                                                 </ul>
                                             </div>
                                         </div>
-<!--                                        商品图片显示在这里-->
+                                        <!--商品图片显示在这里-->
                                         <div class="product-image">
                                             <a class="cs-fancybox-thumbs cloud-zoom" rel="adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5" data-fancybox-group="thumb" title="Women Shorts" alt="Women Shorts">
-                                                <img src="../assets/pic1.jpg" alt="Women Shorts" title="Women Shorts" />
+                                                <img :src=cover />
                                             </a>
                                         </div>
 
@@ -100,8 +100,6 @@
                             <div class="desc1">
 <!--                                商品信息显示在这里-->
                                 <h3>商品名字：{{title}} </h3>
-                                <p>商品详情：{{detail}}</p>
-                                <h5>Rs. 399 <a href="#">click for offer</a></h5>
                                 <div class="available">
                                     <h4>商家名字：{{seller}}</h4>
                                     <h4>联系方式：{{contact}}</h4>
@@ -112,7 +110,7 @@
                                     </div>
                                     <div class="clear"></div>
 
-                                    <div class="btn_form">
+                                    <div class="btn_form" @click="collect(goods_id)">
                                         <form>
                                             <input type="addComment" value="add to collect"/>
                                         </form>
@@ -132,9 +130,6 @@
                                         <el-row>
                                             <el-col>
                                         <el-row><el-col><h3>{{title}}</h3></el-col></el-row>
-                                        <el-row>
-                                            <a><img src="../assets/pic1.jpg" class="img-thumbnail book2"></a>
-                                        </el-row>
                                             </el-col>
                                             <el-col>
                                                <el-row>
@@ -170,87 +165,26 @@
                             </div>
                         </div>
                         <div class="clear"></div>
-<!--                        此处是评论-->
-                        <div class="grids_of_3" v-for=" o in Math.floor((commentData.length)/3)" :key="o">
-                            <div class="grid1_of_3">
-                                <div>
-<!--                                    username是用户的名字-->
-                                    <h3>用户{{commentData[3*(o-1)].username}}评价</h3>
-                                    <div class="price">
-                                        <h4><div class="clear"></div>{{commentData[3*(o-1)].comment}}</h4>
-                                    </div>
-                                    <div class="clear"></div>
-                                    <span class="b_btm"></span>
-                                </div>
-                            </div>
-                            <div class="grid1_of_3">
-                                <div>
-                                    <h3>用户{{commentData[3*(o-1)+1].username}}评价</h3>
-                                    <div class="price">
-                                        <h4><div class="clear"></div>{{commentData[3*(o-1)+1].comment}}</h4>
-                                    </div>
-                                    <div class="clear"></div>
-                                    <span class="b_btm"></span>
-                                </div>
-                            </div>
-                            <div class="grid1_of_3">
-                                <div>
-                                    <h3>用户{{commentData[3*(o-1)+2].username}}评价</h3>
-                                    <div class="price">
-                                        <h4><div class="clear"></div>{{commentData[3*(o-1)+2].comment}}</h4>
-                                    </div>
-                                    <div class="clear"></div>
-                                    <span class="b_btm"></span>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="clear"></div>
-                        <!-- start tabs -->
                         <section class="tabs">
                             <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked">
-                            <label for="tab-1" class="tab-label-1">overview</label>
+                            <label for="tab-1" class="tab-label-1">商品详情</label>
 
                             <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2">
-                            <label for="tab-2" class="tab-label-2">consumer electronics</label>
-
-                            <input id="tab-3" type="radio" name="radio-set" class="tab-selector-3">
-                            <label for="tab-3" class="tab-label-3">semiconductor</label>
+                            <label for="tab-2" class="tab-label-2">商家评论</label>
 
                             <div class="clear-shadow"></div>
 
                             <div class="content">
                                 <div class="content-1">
-                                    <p class="para top"><span>LOREM IPSUM</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
                                     <ul>
-                                        <li>Research</li>
-                                        <li>Design and Development</li>
-                                        <li>Porting and Optimization</li>
-                                        <li>System integration</li>
-                                        <li>Verification, Validation and Testing</li>
-                                        <li>Maintenance and Support</li>
+                                        <li>{{detail}}</li>
                                     </ul>
                                     <div class="clear"></div>
                                 </div>
                                 <div class="content-2">
-                                    <p class="para"><span>WELCOME </span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
-                                    <ul class="qua_nav">
-                                        <li>Multimedia Systems</li>
-                                        <li>Digital media adapters</li>
-                                        <li>Set top boxes for HDTV and IPTV Player applications on various Operating Systems and Hardware Platforms</li>
+                                    <ul class="qua_nav" v-for="obj in commentData" :key="obj">
+                                        <li>{{obj["username"]}}:{{obj["comment"]}}</li>
                                     </ul>
-                                </div>
-                                <div class="content-3">
-                                    <p class="para top"><span>LOREM IPSUM</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
-                                    <ul>
-                                        <li>Research</li>
-                                        <li>Design and Development</li>
-                                        <li>Porting and Optimization</li>
-                                        <li>System integration</li>
-                                        <li>Verification, Validation and Testing</li>
-                                        <li>Maintenance and Support</li>
-                                    </ul>
-                                    <div class="clear"></div>
                                 </div>
                             </div>
                         </section>
@@ -414,8 +348,6 @@
 
             login(){
                 this.$router.push({ path: `/login` });
-
-
             },
             addGoods(){
                 this.$router.push({ path: `/addGoods` });
@@ -430,7 +362,7 @@
             initGoods(){
                 console.log("sss"+this.GLOBAL.goods_id);
                 var that = this;
-                that.$myAxios.get('/goods/findGoodsById',{
+                that.$myAxios.get('goods-server/goods/findGoodsById',{
                     params:{
                         goods_id:that.GLOBAL.goods_id,
 
@@ -440,7 +372,7 @@
                         // console.log(response);
                         that.goods_id=response.data.goods_id;
                         that.contact=response.data.contact;
-                        that.cover=response.data.cover;
+                        that.cover= "data:image/png;base64," + response.data.cover;
                         that.detail = response.data.detail;
                         that.status=response.data.status;
                         that.title=response.data.title;
@@ -462,49 +394,80 @@
             addComment(seller){
                 this.changedialogVisible();
                 var that = this;
-                that.$myAxios.get('/comment/saveComments',{
-                    params:{
-                        username: this.GLOBAL.username,
-                        seller:seller,
-                        comment:this.commentarea,
-
-
-                    }
-                })
+                var bodyFormData = new FormData();
+                bodyFormData.set('username', this.GLOBAL.username);
+                bodyFormData.set('seller', seller);
+                bodyFormData.set('comment', this.commentarea);
+                that.$myAxios({method: 'post',
+                    url: '/comment-server/comment/saveComment',
+                    data: bodyFormData,
+                    config: { headers: {'Content-Type': 'multipart/form-data' }}}
+                )
                     .then(function (response) {
                         console.log(response);
-                        if(response.data=="save comments"){alert("评论商家成功");}
+                        if(response.data){alert("评论商家成功");}
                     })
                     .catch(function (error) {
                         console.log(error);
                     })
                     .then(function () {
                         //always executed
-
-
-                    })
+                    });
+                this.loadComment();
             },
             //这里seller指的是商家的名字
             followUser(seller){
-
-                this.$myAxios.get('/follow/saveFollow',{
-                    params:{
-                        seller:seller,
-                        username: this.GLOBAL.username,
-
+                if(this.GLOBAL.username==="login"){
+                    this.$alert("未登录请先登录");
+                    this.$router.push({ path: `/login` });
+                }
+                let bodyFormData = new FormData();
+                bodyFormData.set('username', this.GLOBAL.username);
+                bodyFormData.set('seller', seller);
+                this.$myAxios(
+                    {
+                        method: 'post',
+                        url: '/follow-server/my/saveFollow',
+                        data: bodyFormData,
+                        config: { headers: {'Content-Type': 'multipart/form-data' }}
                     }
-                })
+                )
                     .then(function (response) {
                         console.log(response);
-                        if(response.data=="save follow"){alert("关注商家成功");}
+                        if(response.data){alert("关注商家成功");}
                     })
                     .catch(function (error) {
                         console.log(error);
                     })
                     .then(function () {
                         //always executed
-
-
+                    })
+            },
+            collect(goods_id){
+                if(this.GLOBAL.username==="login"){
+                    this.$alert("未登录请先登录");
+                    this.$router.push({ path: `/login` });
+                }
+                let bodyFormData = new FormData();
+                bodyFormData.set('username', this.GLOBAL.username);
+                bodyFormData.set('goods_id', goods_id);
+                this.$myAxios(
+                    {
+                        method: 'post',
+                        url: '/collect-server/my/addCollect',
+                        data: bodyFormData,
+                        config: { headers: {'Content-Type': 'multipart/form-data' }}
+                    }
+                )
+                    .then(function (response) {
+                        console.log(response);
+                        if(response.data){alert("收藏商品成功");}
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+                    .then(function () {
+                        //always executed
                     })
             },
             deleteGoods(goods_id){
@@ -532,7 +495,7 @@
             loadComment(){
 
                 var that= this;
-                this.$myAxios.get('/comment/findAllByseller',{
+                this.$myAxios.get('/comment-server/comment/findAllBySeller',{
                     params:{
                         seller:this.seller
                     }

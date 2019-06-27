@@ -53,103 +53,86 @@
     <div class="main_bg">
         <div class="wrap">
             <div class="main">
-                <!-- start grids_of_3 -->
-                <div class="grids_of_3">
-                    <div class="grid1_of_3">
-                        <div @click="toDetail">
-                            <img src="../assets/pic1.jpg" alt=""/>
-                            <h3>branded shoes</h3>
-                            <div class="price">
-                                <h4>$300<span>indulge</span></h4>
-                            </div>
-                            <span class="b_btm"></span>
-                        </div>
-                    </div>
-                    <div class="grid1_of_3">
-                        <div @click="toDetail">
-                            <img src="../assets/pic2.jpg" alt=""/>
-                            <h3>branded t-shirts</h3>
-                            <div class="price">
-                                <h4>$300<span>indulge</span></h4>
-                            </div>
-                            <span class="b_btm"></span>
-                        </div>
-                    </div>
-                    <div class="grid1_of_3">
-                        <div @click="toDetail">
-                            <img src="../assets/pic3.jpg" alt=""/>
-                            <h3>branded tees</h3>
-                            <div class="price">
-                                <h4>$300<span>indulge</span></h4>
-                            </div>
-                            <span class="b_btm"></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="grids_of_3">
-                    <div class="grid1_of_3">
-                        <div @click="toDetail">
-                            <img src="../assets/pic4.jpg" alt=""/>
-                            <h3>branded bags</h3>
-                            <div class="price">
-                                <h4>$300<span>indulge</span></h4>
-                            </div>
-                            <span class="b_btm"></span>
-                        </div>
-                    </div>
-                    <div class="grid1_of_3">
-                        <div @click="toDetail">
-                            <img src="../assets/pic5.jpg" alt=""/>
-                            <h3>ems women bag</h3>
-                            <div class="price">
-                                <h4>$300<span>indulge</span></h4>
-                            </div>
-                            <span class="b_btm"></span>
-                        </div>
-                    </div>
-                    <div class="grid1_of_3">
-                        <div @click="toDetail">
-                            <img src="../assets/pic6.jpg" alt=""/>
-                            <h3>branded cargos</h3>
-                            <div class="price">
-                                <h4>$300<span>indulge</span></h4>
-                            </div>
-                            <span class="b_btm"></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <!-- end grids_of_3 -->
-
                 <!--        这些是与数据库直接相关的-->
                 <div class="grids_of_3" v-for=" o in Math.floor((goodsData.length)/3)" :key="o">
                     <div class="grid1_of_3">
                         <div @click="toDetail(goodsData[3*(o-1)].goods_id)">
-                            <img src="../assets/pic4.jpg" alt=""/>
+                            <img :src=goodsData[3*(o-1)].cover height="200" width="150" />
                             <h3>{{goodsData[3*(o-1)].title}}</h3>
                             <div class="price">
-                                <h4>{{goodsData[3*(o-1)].detail}}<span>detail</span></h4>
+                                <h4>{{goodsData[3*(o-1)].detail}}</h4>
+                                <br>
+                                <h4><span>detail</span></h4>
                             </div>
                             <span class="b_btm"></span>
                         </div>
                     </div>
                     <div class="grid1_of_3">
                         <div @click="toDetail(goodsData[3*(o-1)+1].goods_id)">
-                            <img src="../assets/pic4.jpg" alt=""/>
+                            <img :src=goodsData[3*(o-1)+1].cover height="200" width="150" />
                             <h3>{{goodsData[3*(o-1)+1].title}}</h3>
                             <div class="price">
-                                <h4>{{goodsData[3*(o-1)+1].detail}}<span>detail</span></h4>
+                                <h4>{{goodsData[3*(o-1)+1].detail}}</h4>
+                                <br>
+                                <h4><span>detail</span></h4>
                             </div>
                             <span class="b_btm"></span>
                         </div>
                     </div>
                     <div class="grid1_of_3">
                         <div @click="toDetail(goodsData[3*(o-1)+2].goods_id)">
-                            <img src="../assets/pic4.jpg" alt=""/>
+                            <img :src=goodsData[3*(o-1)+2].cover height="200" width="150" />
                             <h3>{{goodsData[3*(o-1)+2].title}}</h3>
                             <div class="price">
-                                <h4>{{goodsData[3*(o-1)+2].detail}}<span>detail</span></h4>
+                                <h4>{{goodsData[3*(o-1)+2].detail}}</h4>
+                                <br>
+                                <h4><span>detail</span></h4>
+                            </div>
+                            <span class="b_btm"></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="clear"></div>
+                </div>
+                <div class="grids_of_3" v-if="(goodsData.length % 3 === 2)" :key="o">
+                    <div class="grid1_of_3">
+                        <div @click="toDetail(goodsData[goodsData.length-2].goods_id)">
+                            <img :src=goodsData[goodsData.length-2].cover height="200" width="150" />
+                            <h3>{{goodsData[goodsData.length-2].title}}</h3>
+                            <div class="price">
+                                <h4>{{goodsData[goodsData.length-2].detail}}</h4>
+                                <br>
+                                <h4><span>detail</span></h4>
+                            </div>
+                            <span class="b_btm"></span>
+                        </div>
+                    </div>
+                    <div class="grid1_of_3">
+                        <div @click="toDetail(goodsData[goodsData.length-1].goods_id)">
+                            <img :src=goodsData[goodsData.length-1].cover height="200" width="150" />
+                            <h3>{{goodsData[goodsData.length-1].title}}</h3>
+                            <div class="price">
+                                <h4>{{goodsData[goodsData.length-1].detail}}</h4>
+                                <br>
+                                <h4><span>detail</span></h4>
+                            </div>
+                            <span class="b_btm"></span>
+                        </div>
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+                <div class="grids_of_3" v-if="(goodsData.length % 3 === 1)" :key="o">
+                    <div class="grid1_of_3">
+                        <div @click="toDetail(goodsData[goodsData.length-1].goods_id)">
+                            <img :src=goodsData[goodsData.length-1].cover height="200" width="150" />
+                            <h3>{{goodsData[goodsData.length-1].title}}</h3>
+                            <div class="price">
+                                <h4>{{goodsData[goodsData.length-1].detail}}</h4>
+                                <br>
+                                <h4><span>detail</span></h4>
                             </div>
                             <span class="b_btm"></span>
                         </div>
@@ -254,6 +237,7 @@
         data () {
             return {
                 message: localStorage.getItem('username'),
+                username: '',
                 goodsData:[],
                 goods_id: 0,
 
@@ -278,6 +262,7 @@
 
             },
             addGoods(){
+                this.GLOBAL.username = this.message;
                 this.$router.push({ path: `/addGoods` });
             },
             loadGoods(){
@@ -288,12 +273,12 @@
                             var objproject = {
                                 "goods_id" : response.data[i].goods_id,//这个是赋值到一个数组对象里面去，开发的时候就是取到里面的值进行一个逻辑判断，要干嘛干嘛的。这个也加上他的下标
                                 "contact" : response.data[i].contact,
-                                "cover" : response.data[i].cover,
+                                "cover" : "data:image/png;base64," + response.data[i].cover.toString(),
                                 "detail" : response.data[i].detail,
                                 "status" :response.data[i].status,
                                 "title" :response.data[i].title,
                                 "username":response.data[i].username,
-                            }
+                            };
                             that.goodsData.push(objproject);
                             console.log(that.goodsData[i]);
 

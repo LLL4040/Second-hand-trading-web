@@ -1,7 +1,18 @@
 
 <template>
     <body>
+
     <div class="body">
+        <div class="header_bg">
+            <div class="wrap">
+                <div class="header">
+                    <div class="logo">
+                        <a href="index.html"><img src="../assets/logo.png" alt=""/> </a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
         <div class="main">
             <!-----start-main---->
             <div class="inset">
@@ -12,11 +23,11 @@
                 </div>
             </div>
             <h2>Or sign up with</h2>
-            <form>
-                <div class="lable">
-                    <input type="text" class="text" v-model="form.username" placeholder="First Name"  >
 
-                    <input type="text" class="text" v-model="form.phone" placeholder="Last Name" >
+                <div class="lable">
+                    <input type="text" class="text" v-model="form.username" placeholder="Name"  >
+
+                    <input type="text" class="text" v-model="form.phone" placeholder="Phone" >
                 </div>
                 <div class="clear"> </div>
                 <div class="lable-2">
@@ -31,7 +42,7 @@
                 </div>
                 </div>
                 <div class="clear"> </div>
-            </form>
+
             <!-----//end-main---->
         </div>
 
@@ -395,8 +406,8 @@
         methods: {
             /* 提交进行判断的函数 */
             reg: function () {
-                const self = this
-                let url = '/my/register'
+                const self = this;
+                let url = 'user-server/user/register';
                 this.$myAxios.get(url,
                     {
                         params: {

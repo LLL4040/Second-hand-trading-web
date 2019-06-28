@@ -20,8 +20,8 @@
                     <ul class="icon1 sub-icon1">
                         <li><a class="active-icon c1" href="#" @click="addGoods"><i>addGoods</i></a>
                             <ul class="sub-icon1 list">
-                                <li><h3>shopping cart empty</h3><a href=""></a></li>
-                                <li><p>if items in your wishlit are missing, <a href="#l">contact us</a> to view them</p></li>
+                                <li><h3>发布新商品</h3><a href=""></a></li>
+                                <!--<li><p>if items in your wishlit are missing, <a href="#l">contact us</a> to view them</p></li>-->
                             </ul>
                         </li>
                     </ul>
@@ -38,8 +38,6 @@
             </div>
         </div>
     </div>
-
-
 
     <!-- start main1 -->
     <div class="main_bg1">
@@ -216,9 +214,7 @@
 
                 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
                 <!--end scroll_top_btn -->
-                <div class="copy">
-                    <p class="link">Copyright &copy; 2014.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> -  More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
-                </div>
+                
                 <div class="clear"></div>
             </div>
         </div>

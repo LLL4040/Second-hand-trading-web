@@ -8,10 +8,10 @@
                 </div>
                 <div class="h_icon">
                     <ul class="icon1 sub-icon1">
-                        <li><a class="active-icon c1" href="#"><i>$300</i></a>
-                            <ul class="sub-icon1 list">
-                                <li><h3>shopping cart empty</h3><a href=""></a></li>
-                                <li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
+                        <li><a class="active-icon c1" href="#" @click="login"><i>{{message}}</i></a>
+
+                            <ul class="sub-icon1 list" >
+                                <router-link router-link :to="{name:'mycenter'}" ><li><h3>个人中心</h3></li></router-link>
                             </ul>
                         </li>
                     </ul>

@@ -151,9 +151,7 @@
 
                     <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
                     <!--end scroll_top_btn -->
-                    <div class="copy">
-                        <p class="link">Copyright &copy; 2014.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> -  More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
-                    </div>
+
                     <div class="clear"></div>
                 </div>
             </div>
@@ -207,6 +205,10 @@
                             document.getElementById("12222").click();
                             //this.$router.push({ path: `/` });
                         }
+                        else {
+                            alert('用户名或密码错误！请重试');
+                        }
+
                     })
                     .catch(err => {
                         console.log(err);

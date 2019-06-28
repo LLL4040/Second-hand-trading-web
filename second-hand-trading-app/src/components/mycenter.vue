@@ -64,7 +64,6 @@
             <div class="info" v-if="myinformation !== 'false'"><p>邮箱：</p>{{email}}</div>
             <div v-if="mycollect !== 'false'" class="info">
                 <div>我的收藏</div>
-                <!--eslint-disable-next-line-->
                 <tr v-for="p in itemList">
                     <td>{{p.goods_id}}</td>
                     <td color="#ff9955"><router-link :to="{name:'detail',params:{ id:p}}">{{"goods_id:    "+p.goods_id}}</router-link></td>
@@ -170,7 +169,15 @@
             }
         },
         methods: {
-            /* 提交进行判断的函数 */
+            login(){
+                this.$router.push({ path: `/login` });
+
+
+            },
+            addGoods(){
+                this.GLOBAL.username = this.message;
+                this.$router.push({ path: `/addGoods` });
+            },
             myinfo() {
                 this.mycollect='false';
                 this.myinformation='true';

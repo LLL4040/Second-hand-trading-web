@@ -1,32 +1,27 @@
-# User guidline
+# User guideline
 
-## ����1����IntelliJ IDEA��ʹ��tomcat����
+## IntelliJ IDEA & tomcat
 
-* step1: 
-    ������`Eureka`֮���ÿһ�������`application.yml`�����ļ���`defaultZone`��URL��Ϊ`http://localhost:9000/eureka/`
-* step2: 
-    ����������������еķ���
+* step1: set the `defaultZone URL` in XXserver/application.yml to `http://localhost:9000/eureka/` except eurekaserver
 
-## ����2����docker����������
+* step2: run eurekaserverApplication
 
-* step1: 
-    ������`Eureka`֮���ÿһ�������`application.yml`�����ļ���`defaultZone`��URL��Ϊ`http://eureka-server:9000/eureka/`
-* step2: 
-    ��cmd��cd������������ļ�Ŀ¼�·ֱ�����`mvn clean package -D maven.test.skip=true docker:build`������Ӧ��docker image
-* step3: 
-    ��docker shell��������������������
+* step3: run rest server applications
 
-```bash
-$ docker network create -d bridge cloud
-$ docker run -p 9000:9000 -idt --name eureka-server --network cloud lyl4040/Eureka
-$ docker run -p 9001:9001 -idt --name provider --network cloud lyl4040/servicedemo
-$ docker run -p 9002:9002 -idt --name consumer --network cloud lyl4040/servicehi
-```
+* step4: input URL `http://localhost:9010/XX-server/url` to access the corresponding page. 
+for example use `http://localhost:9010/goods-server/goods/getAllgoods` to get all goods.
 
-## ����
+## IntelliJ IDEA & Docker
 
-* ���� http://localhost:9000 ����ע������
-* ���� http://localhost:9001/demo?name=233 ���������߶�(��������)
-* ���� http://localhost:9002/hi?name=233 ���������߶�(��������)
-* ��������߷���û�����У����������߶˻���ö�·����fallback������ʾ��Ϣ
-* ������������������docker����Ҫ��localhost����docker��������ip
+* step1: set the `defaultZone URL` in XXserver/application.yml to `http://eureka-server:9000/eureka/` except eurekaserver
+
+* step2: cd springcloud path and run `mvn clean package -D maven.test.skip=true docker:build` to build docker images
+
+* step3: in docker shell input the commands following
+    ```c
+    $ docker network create -d bridge cloud
+    $ docker run -p 9000:9000 -idt --name eureka-server --network cloud yourusername/Eureka
+    ```
+    and run the rest server images, too.
+
+* step4: input URL to access the pages like above

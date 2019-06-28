@@ -64,6 +64,7 @@
             <div class="info" v-if="myinformation !== 'false'"><p>邮箱：</p>{{email}}</div>
             <div v-if="mycollect !== 'false'" class="info">
                 <div>我的收藏</div>
+                <!--eslint-disable-next-line-->
                 <tr v-for="p in itemList">
                     <td>{{p.goods_id}}</td>
                     <td color="#ff9955">

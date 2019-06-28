@@ -6,8 +6,8 @@
         <div class="header_bg">
             <div class="wrap">
                 <div class="header">
-                    <div class="logo">
-                        <a href="index.html"><img src="../assets/logo.png" alt=""/> </a>
+                    <div class="logo" >
+                        <a href="index.html" id="12222"><img  src="../assets/logo.png" alt=""/> </a>
                     </div>
                     <div class="h_icon">
                         <ul class="icon1 sub-icon1">
@@ -51,7 +51,7 @@
             <div class="message">二手平台-登陆注册</div>
             <div id="darkbannerwrap"></div>
 
-            <form>
+
                 <input name="username" placeholder="用户名"  type="text1" v-model="username">
                 <hr class="hr15">
                 <input name="password" placeholder="密码"  type="password" v-model="password">
@@ -60,7 +60,7 @@
                 <router-link :to="{name:'register'}"><input value="注册"  type="button" style="width:40%;"></router-link>
                 <hr class="hr20">
                 <!-- 帮助 <a onClick="alert('请联系管理员')">忘记密码</a> -->
-            </form>
+
 
 
         </div>
@@ -134,7 +134,7 @@
                 <div class="footer">
                     <!-- scroll_top_btn -->
 
-                    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+<!--                    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>-->
                     <!--end scroll_top_btn -->
                     <div class="copy">
                         <p class="link">Copyright &copy; 2014.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> -  More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
@@ -185,7 +185,8 @@
         methods: {
             /* 提交进行判断的函数 */
             sub: function () {
-                const self = this;
+                // const self = this;
+                var that =this;
                 let url = 'user-server/user/login';
                 this.$myAxios.get(url,
                     {
@@ -196,18 +197,25 @@
                     })
                     .then(function (res) {
                         var itemlist = res.data;
-                        self.itemList = itemlist;
-                        console.log(self.itemList);
+                        that.itemList = itemlist;
+                        console.log(that.itemList);
                         if (res.data.loginsuccess === 1) {
                             alert('登陆成功');
                             localStorage.setItem('username', res.data.name);
                             localStorage.setItem('phone', res.data.phone);
                             localStorage.setItem('email', res.data.email);
-                            this.$router.push({ path: `/` });
+                            document.getElementById("12222").click();
+                            //this.$router.push({ path: `/` });
                         }
                     })
                     .catch(err => {
-                        console.log(err)
+                        console.log(err);
+                       // this.$router.push({ path: `/` });
+
+                    })
+                    .then(function()  {
+                        //that.$forceUpdate();//强制刷新
+                        //this.$router.push({ path: `/` });
                     })
             },
         }

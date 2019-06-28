@@ -245,6 +245,7 @@
         },
         mounted(){
             this.loadGoods();
+
         },
         methods:{
             toDetail(goods_id){

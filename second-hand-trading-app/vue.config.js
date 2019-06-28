@@ -54,6 +54,7 @@ module.exports = {
     pwa: {},
     // webpack-dev-server 相关配置
     devServer: {
+        disableHostCheck: true,
         proxy: {
             '': {
                 target: 'http://localhost:9010/',

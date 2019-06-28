@@ -413,6 +413,7 @@
                     .then(function () {
                         //always executed
                     });
+                this.commentData = [];
                 this.loadComment();
             },
             //这里seller指的是商家的名字
@@ -510,14 +511,14 @@
                                 "seller" : response.data[i].seller,
                                 "comment" : response.data[i].comment,
                                 //"comments_id" :response.data[i].comments_id,
-                            }
+                            };
                             that.commentData.push(objproject);
                             console.log(that.commentData[i]);
 
                             console.log(that.commentData[i].comment);
 
                         }
-                        this.$forceUpdate();//强制刷新
+                        that.$forceUpdate();//强制刷新
                     })
                     .catch(function (error) {
                         console.log(error);

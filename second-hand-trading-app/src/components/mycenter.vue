@@ -66,8 +66,9 @@
                 <div>我的收藏</div>
                 <tr v-for="p in itemList">
                     <td>{{p.goods_id}}</td>
-                    <td color="#ff9955"><router-link :to="{name:'detail',params:{ id:p}}">{{"goods_id:    "+p.goods_id}}</router-link></td>
-
+                    <td color="#ff9955">
+                        <div @click="toDetail(p.goods_id)">{{p.goods.title}}</div>
+                    </td>
                 </tr>
             </div>
 
@@ -169,6 +170,15 @@
             }
         },
         methods: {
+            toDetail(goods_id){
+
+                this.GLOBAL.username = this.username;
+                this.GLOBAL.goods_id = goods_id;
+                console.log(this.GLOBAL.goods_id);
+                this.$router.push({ path: `/detail` });
+
+
+            },
             login(){
                 this.$router.push({ path: `/login` });
 

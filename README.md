@@ -16,3 +16,11 @@ homework for SE418
 ## IDEA
 
 见doc\需求分析v0.docx
+
+## Frondend
+
+在`second-hand-trading-app`文件夹下
+
+## Backend
+
+在`springcloud`文件夹下
